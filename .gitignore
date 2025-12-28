@@ -1,0 +1,7 @@
+/**/.obsidian
+/node_modules
+.idea
+.vscode
+**/build
+**/out
+.DS_store
