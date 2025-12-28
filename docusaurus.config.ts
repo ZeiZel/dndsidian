@@ -43,9 +43,9 @@ const themeConfig: ThemeConfig = {
 		respectPrefersColorScheme: true,
 	},
 	navbar: {
-		title: 'Self-hosted',
+		title: 'dndsidian',
 		logo: {
-			alt: 'Self-hosted-world',
+			alt: 'dndsidian-world',
 			src: 'img/logo.svg',
 		},
 		items: [
@@ -87,7 +87,7 @@ const themeConfig: ThemeConfig = {
 				title: 'Community',
 				items: [
 					{
-						label: 'Stoat Server of Self-hosted',
+						label: 'Stoat Server of dndsidian',
 						href: 'https://stoat.zeizel.ru',
 					},
 				],

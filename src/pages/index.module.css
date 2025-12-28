@@ -1,23 +1,54 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: radial-gradient(circle at center,
+  rgba(212,175,55,0.1) 0%,
+  transparent 70%);
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroTitle {
+  font-size: 3.5rem;
+  font-family: 'Cinzel', serif;
+  background: linear-gradient(45deg, var(--dnd-gold), #F4D03F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  opacity: 0.9;
+}
+
+.heroLogo img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
 .buttons {
   display: flex;
-  align-items: center;
+  gap: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.diceAnimation {
+  position: absolute;
+  bottom: -50px;
+  right: 10%;
+  animation: diceFloat 6s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes diceFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(360deg); }
 }

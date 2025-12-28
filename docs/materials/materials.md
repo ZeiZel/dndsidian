@@ -1,6 +1,13 @@
 ---
+title: Материалы
 sidebar_position: 1
 ---
+
+import { RulesPdfList } from '@site/src/components';
+
+## Правила
+
+<RulesPdfList/>
 
 ## Battlemaps
 
