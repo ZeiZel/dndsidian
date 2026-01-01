@@ -1,0 +1,117 @@
+---
+# Ansible playbook для установки Docker и Caddy на удалённом сервере
+# Все пути используют относительные пути от домашней директории пользователя (~)
+
+- hosts: localhost
+  become: true
+  vars:
+    user_home: "{{ ansible_env.HOME }}"
+    
+  tasks:
+    - name: Обновление списка пакетов
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Установка необходимых пакетов для Docker
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+          - software-properties-common
+        state: present
+
+    - name: Добавление GPG-ключа Docker
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Определение кодового имени дистрибутива
+      shell: lsb_release -cs
+      register: release_codename
+      changed_when: false
+
+    - name: Добавление репозитория Docker
+      apt_repository:
+        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ release_codename.stdout }} stable"
+        state: present
+
+    - name: Установка Docker
+      apt:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-buildx-plugin
+          - docker-compose-plugin
+        state: present
+        update_cache: yes
+
+    - name: Добавление текущего пользователя в группу docker
+      user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: true
+
+    - name: Запуск и включение Docker
+      systemd:
+        name: docker
+        enabled: true
+        state: started
+
+    - name: Установка зависимостей для Caddy
+      apt:
+        name:
+          - debian-keyring
+          - debian-archive-keyring
+          - apt-transport-https
+        state: present
+
+    - name: Добавление GPG-ключа Caddy
+      shell: |
+        curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+      args:
+        creates: /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+
+    - name: Добавление репозитория Caddy
+      shell: |
+        curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+      args:
+        creates: /etc/apt/sources.list.d/caddy-stable.list
+
+    - name: Обновление списка пакетов после добавления репозитория Caddy
+      apt:
+        update_cache: yes
+
+    - name: Установка Caddy
+      apt:
+        name: caddy
+        state: present
+
+    - name: Проверка установки Docker
+      command: docker --version
+      register: docker_version
+      changed_when: false
+
+    - name: Проверка установки Docker Compose
+      command: docker compose version
+      register: docker_compose_version
+      changed_when: false
+
+    - name: Проверка установки Caddy
+      command: caddy version
+      register: caddy_version
+      changed_when: false
+
+    - name: Вывод информации об установленных версиях
+      debug:
+        msg:
+          - "Docker установлен: {{ docker_version.stdout }}"
+          - "Docker Compose установлен: {{ docker_compose_version.stdout }}"
+          - "Caddy установлен: {{ caddy_version.stdout }}"
+          - ""
+          - "ВАЖНО: Перезайдите в систему или выполните 'newgrp docker' для применения изменений группы пользователя"
+

@@ -1,0 +1,125 @@
+/* Стили для навбара - единая стилистика D&D */
+
+.navbar {
+  background: var(--dnd-bg-secondary) !important;
+  border-bottom: 2px solid var(--dnd-border) !important;
+  box-shadow: 0 2px 8px var(--dnd-shadow) !important;
+  backdrop-filter: blur(10px);
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.navbar__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.navbar__brand {
+  color: var(--dnd-text) !important;
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: var(--font-size-2xl);
+  transition: var(--transition-base);
+}
+
+.navbar__brand:hover {
+  color: var(--color-primary) !important;
+  transform: scale(1.05);
+}
+
+.navbar__brand:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
+.navbar__logo {
+  filter: drop-shadow(0 2px 4px var(--dnd-shadow));
+  margin-right: var(--spacing-sm);
+}
+
+.navbar__item,
+.navbar__link {
+  color: var(--dnd-text) !important;
+  transition: var(--transition-base);
+  font-family: var(--font-family-base);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  margin: 0 var(--spacing-xs);
+}
+
+.navbar__item:hover,
+.navbar__link:hover {
+  color: var(--color-primary) !important;
+  background: var(--dnd-bg-tertiary) !important;
+  transform: translateY(-2px);
+}
+
+.navbar__item:focus-visible,
+.navbar__link:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
+.navbar__item--active {
+  color: var(--color-primary) !important;
+  font-weight: 600;
+  background: var(--dnd-bg-tertiary) !important;
+}
+
+/* Dropdown меню */
+.dropdown,
+.dropdown__menu,
+.ant-dropdown-menu {
+  background: var(--dnd-bg-secondary) !important;
+  border: 2px solid var(--dnd-border) !important;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 4px 16px var(--dnd-shadow) !important;
+  padding: var(--spacing-xs);
+}
+
+/* Ant Design dropdown */
+.ant-dropdown {
+  background: var(--dnd-bg-secondary) !important;
+}
+
+.ant-dropdown-menu {
+  background: var(--dnd-bg-secondary) !important;
+  border: 2px solid var(--dnd-border) !important;
+}
+
+.dropdown__link {
+  color: var(--dnd-text) !important;
+  transition: var(--transition-base);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  display: block;
+}
+
+.dropdown__link:hover {
+  background: var(--dnd-bg-tertiary) !important;
+  color: var(--color-primary) !important;
+}
+
+.dropdown__link:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+}
+
+/* Кнопка переключения темы */
+.navbar__item--right {
+  margin-left: auto;
+}
+
+/* Тёмная тема для навбара */
+[data-theme='dark'] .navbar {
+  background: var(--dnd-bg-secondary) !important;
+  border-bottom-color: var(--dnd-border) !important;
+}
+
+[data-theme='dark'] .navbar__item:hover,
+[data-theme='dark'] .navbar__link:hover {
+  background: var(--dnd-bg-tertiary) !important;
+  color: var(--color-primary) !important;
+}
+

@@ -1,7 +1,23 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: var(--spacing-xl) 0;
+  width: 100%;
+}
+
+.featuresRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.featureCol {
+  flex: 1 1 300px;
+  display: flex;
+}
+
+.featureCol > * {
   width: 100%;
 }
 

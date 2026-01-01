@@ -1,0 +1,47 @@
+.paragraph {
+	font-family: var(--font-family-base);
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-normal);
+	margin: 0;
+	padding: 0;
+	transition: var(--transition-base);
+}
+
+/* Spacing для параграфов */
+.paragraph + .paragraph {
+	margin-top: var(--spacing-md);
+}
+
+.paragraph:not(:last-child) {
+	margin-bottom: var(--spacing-md);
+}
+
+/* Appearance варианты */
+.appearance-default {
+	color: var(--dnd-text);
+}
+
+.appearance-primary {
+	color: var(--color-primary);
+}
+
+.appearance-secondary {
+	color: var(--color-secondary);
+}
+
+.appearance-danger {
+	color: var(--color-danger);
+}
+
+/* Доступность - focus states */
+.paragraph:focus-visible {
+	outline: 2px solid var(--color-primary-focus);
+	outline-offset: 2px;
+	border-radius: var(--border-radius-sm);
+}
+
+/* Тёмная тема */
+[data-theme='dark'] .appearance-default {
+	color: var(--dnd-text);
+}
+

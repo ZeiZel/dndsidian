@@ -1,0 +1,73 @@
+version: '3.8'
+
+# Docker Compose конфигурация для локальной машины
+# Содержит Foundry VTT и Pangolin клиент (WireGuard)
+# Volume с данными Foundry позволяет видеть изменения файлов в реальном времени
+
+services:
+  foundry:
+    image: felddy/foundryvtt:latest
+    container_name: foundry
+    restart: unless-stopped
+    ports:
+      - "30000:30000"
+    volumes:
+      # Volume с данными Foundry - все файлы доступны локально
+      - ./foundry-data:/data
+    environment:
+      # Замените на ваши реальные значения
+      # Получите FOUNDRY_LICENSE_KEY из вашей учётной записи Foundry
+      - FOUNDRY_LICENSE_KEY=${FOUNDRY_LICENSE_KEY}
+      - FOUNDRY_USERNAME=${FOUNDRY_USERNAME:-admin}
+      - FOUNDRY_PASSWORD=${FOUNDRY_PASSWORD}
+      - FOUNDRY_ADMIN_KEY=${FOUNDRY_ADMIN_KEY}
+    networks:
+      - foundry-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:30000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  pangolin:
+    # Замените на актуальный образ Pangolin из Docker Hub
+    # Пример: pangolin/pangolin:latest или fosrl/pangolin:latest
+    image: pangolin/pangolin:latest
+    container_name: pangolin-client
+    restart: unless-stopped
+    volumes:
+      - ./pangolin-config:/config
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    sysctls:
+      - net.ipv4.ip_forward=1
+    networks:
+      - foundry-network
+    environment:
+      # Настройте переменные окружения согласно документации Pangolin
+      - PANGOLIN_MODE=client
+      # Укажите адрес удалённого сервера Pangolin
+      - PANGOLIN_SERVER=${PANGOLIN_SERVER}
+    depends_on:
+      - foundry
+    healthcheck:
+      test: ["CMD", "wg", "show"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  foundry-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./foundry-data
+
+networks:
+  foundry-network:
+    driver: bridge
+

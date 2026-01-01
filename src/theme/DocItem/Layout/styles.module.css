@@ -1,0 +1,14 @@
+.docItemCol {
+	max-width: 75% !important;
+}
+
+.docItemContainer {
+	max-width: 100%;
+}
+
+@media (max-width: 996px) {
+	.docItemCol {
+		max-width: 100% !important;
+	}
+}
+

@@ -1,67 +1,565 @@
+/* ============================================
+   Глобальные CSS токены (Design Tokens)
+   ============================================ */
+
+:root {
+  /* Цвета - Primary (золотой акцент) */
+  --color-primary: #C9A961;
+  --color-primary-light: #E5D4A0;
+  --color-primary-dark: #A67C52;
+  --color-primary-hover: #D4B877;
+  --color-primary-focus: #B8945F;
+  
+  /* Цвета - Secondary */
+  --color-secondary: #8B6F47;
+  --color-secondary-light: #A67C52;
+  --color-secondary-dark: #6B5238;
+  
+  /* Цвета - Danger */
+  --color-danger: #D32F2F;
+  --color-danger-light: #EF5350;
+  --color-danger-dark: #B71C1C;
+  
+  /* Цвета - Background */
+  --dnd-bg-primary: #F5F5DC;
+  --dnd-bg-secondary: #FAF8F3;
+  --dnd-bg-tertiary: #F0EDE5;
+  
+  /* Цвета - Text */
+  --dnd-text: #2C2416;
+  --dnd-text-muted: #6B5238;
+  --dnd-text-light: #8B6F47;
+  
+  /* Цвета - Border */
+  --dnd-border: #D4C5A9;
+  --dnd-border-light: #E5D4A0;
+  --dnd-border-dark: #A67C52;
+  
+  /* Цвета - Legacy (для обратной совместимости) */
+  --dnd-gold: var(--color-primary);
+  --dnd-gold-light: var(--color-primary-light);
+  --dnd-gold-dark: var(--color-primary-dark);
+  --dnd-brown: var(--color-secondary);
+  
+  /* Цвета - Shadows */
+  --dnd-shadow: rgba(0, 0, 0, 0.1);
+  --dnd-shadow-dark: rgba(0, 0, 0, 0.2);
+  
+  /* Spacing токены */
+  --spacing-xs: 0.25rem;    /* 4px */
+  --spacing-sm: 0.5rem;      /* 8px */
+  --spacing-md: 1rem;        /* 16px */
+  --spacing-lg: 1.5rem;      /* 24px */
+  --spacing-xl: 2rem;        /* 32px */
+  --spacing-2xl: 3rem;       /* 48px */
+  --spacing-3xl: 4rem;      /* 64px */
+  
+  /* Typography токены */
+  --font-family-base: 'Montserrat', sans-serif;
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.25rem;   /* 20px */
+  --font-size-2xl: 1.5rem;   /* 24px */
+  --font-size-3xl: 2rem;     /* 32px */
+  --font-size-4xl: 2.5rem;   /* 40px */
+  --font-size-5xl: 3rem;     /* 48px */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Border radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+  --border-radius-xl: 12px;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Z-index layers */
+  --z-base: 1;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+[data-theme='dark'] {
+  /* Цвета - Primary (золотой акцент) */
+  --color-primary: #D4B877;
+  --color-primary-light: #E5D4A0;
+  --color-primary-dark: #B8945F;
+  --color-primary-hover: #E5D4A0;
+  --color-primary-focus: #C9A961;
+  
+  /* Цвета - Secondary */
+  --color-secondary: #A67C52;
+  --color-secondary-light: #B8945F;
+  --color-secondary-dark: #8B6F47;
+  
+  /* Цвета - Danger */
+  --color-danger: #EF5350;
+  --color-danger-light: #FF6B6B;
+  --color-danger-dark: #D32F2F;
+  
+  /* Цвета - Background */
+  --dnd-bg-primary: #1A1611;
+  --dnd-bg-secondary: #2C2416;
+  --dnd-bg-tertiary: #3D3224;
+  
+  /* Цвета - Text */
+  --dnd-text: #F5F5DC;
+  --dnd-text-muted: #D4C5A9;
+  --dnd-text-light: #E5D4A0;
+  
+  /* Цвета - Border */
+  --dnd-border: #4A3E2E;
+  --dnd-border-light: #5A4D3E;
+  --dnd-border-dark: #3D3224;
+  
+  /* Цвета - Legacy */
+  --dnd-gold: var(--color-primary);
+  --dnd-gold-light: var(--color-primary-light);
+  --dnd-gold-dark: var(--color-primary-dark);
+  --dnd-brown: var(--color-secondary);
+  
+  /* Цвета - Shadows */
+  --dnd-shadow: rgba(0, 0, 0, 0.3);
+  --dnd-shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+/* Appearance варианты для компонентов */
+.appearance-default {
+  color: var(--dnd-text);
+  background: transparent;
+}
+
+.appearance-primary {
+  color: var(--color-primary);
+  background: transparent;
+}
+
+.appearance-primary.appearance-filled {
+  color: var(--dnd-text);
+  background: var(--color-primary);
+}
+
+.appearance-secondary {
+  color: var(--color-secondary);
+  background: transparent;
+}
+
+.appearance-secondary.appearance-filled {
+  color: var(--dnd-text);
+  background: var(--color-secondary);
+}
+
+.appearance-danger {
+  color: var(--color-danger);
+  background: transparent;
+}
+
+.appearance-danger.appearance-filled {
+  color: var(--dnd-text);
+  background: var(--color-danger);
+}
+
+/* Focus states для доступности */
+*:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Улучшенные focus states для интерактивных элементов */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--dnd-bg-primary), 0 0 0 4px var(--color-primary-focus);
+}
+
+/* Hover states с улучшенной видимостью */
+a:hover,
+button:hover,
+.interactive:hover {
+  transition: var(--transition-base);
+  opacity: 0.9;
+}
+
+/* Selected states */
+.selected,
+[aria-selected='true'] {
+  background: var(--dnd-bg-tertiary);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Active states */
+button:active,
+a:active {
+  transform: translateY(1px);
+  transition: var(--transition-fast);
+}
+
+/* Disabled states для доступности */
+button:disabled,
+a[aria-disabled='true'],
+input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Screen reader only класс */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Улучшенная контрастность для текста */
+p, span, div, li {
+  color: var(--dnd-text);
+}
+
+/* Минимальная контрастность 4.5:1 для обычного текста */
+/* Минимальная контрастность 3:1 для крупного текста (18px+) */
+
+/* ============================================
+   Основной контент
+   ============================================ */
+
+/* Глобальные стили для body и html */
+html,
+body {
+  background: var(--dnd-bg-primary) !important;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.03) 1px, transparent 0),
+    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.02) 1px, transparent 0);
+  background-size: 20px 20px, 40px 40px;
+  background-position: 0 0, 10px 10px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.01) 2px,
+      rgba(0, 0, 0, 0.01) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.01) 2px,
+      rgba(0, 0, 0, 0.01) 4px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Тёмная тема - более тонкий эффект */
+[data-theme='dark'] html,
+[data-theme='dark'] body {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.02) 1px, transparent 0),
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.01) 1px, transparent 0);
+  background-size: 25px 25px, 50px 50px;
+}
+
+[data-theme='dark'] body::before {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.008) 2px,
+      rgba(255, 255, 255, 0.008) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.008) 2px,
+      rgba(255, 255, 255, 0.008) 4px
+    );
+}
+
+/* Стили для not-found и error страниц */
+.not-found,
+.error-page,
+[class*="error"],
+[class*="not-found"] {
+  background: var(--dnd-bg-primary) !important;
+  min-height: 100vh;
+}
+
 main {
-    background: linear-gradient(135deg,
-    var(--dnd-parchment) 0%,
-    #F5E8C7 50%,
-    var(--dnd-parchment) 100%);
-    background-attachment: fixed;
-    min-height: 100vh;
-    position: relative;
+  background: transparent;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
-main::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('/img/parchment-bg.webp');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.1;
-    z-index: -1;
-}
-
+/* Статьи и контент */
 article {
-    background: rgba(253, 246, 227, 0.95);
-    backdrop-filter: blur(10px);
-    border: 3px solid var(--dnd-gold);
-    /*border-image: url('/img/gold-border.png') 4 repeat;*/
-    box-shadow:
-            0 10px 30px rgba(0,0,0,0.3),
-            inset 0 1px 0 rgba(255,255,255,0.5);
-    margin: 2rem auto;
-    padding: 2.5rem;
-    border-radius: 8px;
-    font-family: 'Lora', serif;
+  background: var(--dnd-bg-secondary);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--dnd-border);
+  box-shadow: 0 4px 16px var(--dnd-shadow);
+  margin: var(--spacing-xl) auto;
+  padding: var(--spacing-2xl);
+  border-radius: var(--border-radius-lg);
+  font-family: var(--font-family-base);
+  color: var(--dnd-text);
 }
 
-h1, h2, h3 {
-    font-family: 'Cinzel', serif;
-    color: var(--dnd-ink-black);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    border-bottom: 2px solid var(--dnd-gold);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+/* Заголовки */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-base);
+  color: var(--dnd-text);
+  text-shadow: 1px 1px 2px var(--dnd-shadow);
+  border-bottom: 2px solid var(--dnd-border);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
 }
 
-[data-theme='dark'] h1, [data-theme='dark'] h2, [data-theme='dark'] h3 {
-    color: var(--dnd-gold);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+h1 {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  margin-top: 0;
 }
 
+h2, h3 {
+  margin-top: var(--spacing-xl);
+}
+
+[data-theme='dark'] h1 {
+  color: var(--color-primary-light);
+}
+
+[data-theme='dark'] h2,
+[data-theme='dark'] h3 {
+  color: var(--color-primary);
+}
+
+/* Ссылки */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition-base);
+  border-bottom: 1px solid transparent;
+  padding: var(--spacing-xs) 0;
+}
+
+a:hover {
+  color: var(--color-primary-light);
+  border-bottom-color: var(--color-primary);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Кнопки */
 .dnd-button {
-    background: linear-gradient(145deg, var(--dnd-gold), #B8860B);
-    border: 2px solid #8B6914;
-    color: var(--dnd-ink-black);
-    font-family: 'Cinzel', serif;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(212,175,55,0.4);
-    transition: all 0.3s ease;
+  background: linear-gradient(145deg, var(--color-primary), var(--color-primary-dark));
+  border: 2px solid var(--color-secondary);
+  color: var(--dnd-text);
+  font-family: var(--font-family-base);
+  font-weight: 600;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  margin: var(--spacing-xs);
+  border-radius: var(--border-radius-md);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px var(--dnd-shadow);
+  transition: var(--transition-base);
 }
 
 .dnd-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212,175,55,0.6);
+  background: linear-gradient(145deg, var(--color-primary-light), var(--color-primary));
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px var(--dnd-shadow-dark);
+}
+
+.dnd-button:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+}
+
+/* Код блоки */
+code {
+  background: var(--dnd-bg-tertiary);
+  color: var(--color-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9em;
+  border: 1px solid var(--dnd-border);
+  margin: 0 var(--spacing-xs);
+}
+
+pre {
+  background: var(--dnd-bg-tertiary);
+  border: 2px solid var(--dnd-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  overflow-x: auto;
+}
+
+pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Таблицы */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: var(--spacing-lg) 0;
+  background: var(--dnd-bg-secondary);
+  border: 2px solid var(--dnd-border);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+th {
+  background: var(--color-primary);
+  color: var(--dnd-text);
+  font-family: var(--font-family-base);
+  font-weight: 600;
+  padding: var(--spacing-sm);
+  text-align: left;
+}
+
+td {
+  padding: var(--spacing-sm);
+  border-top: 1px solid var(--dnd-border);
+  color: var(--dnd-text);
+}
+
+tr:hover {
+  background: var(--dnd-bg-tertiary);
+}
+
+tr:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: -2px;
+}
+
+/* Блоки с предупреждениями */
+.alert {
+  border: 2px solid var(--dnd-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  background: var(--dnd-bg-secondary);
+}
+
+/* Анимации для Ant Design компонентов */
+.ant-menu-item,
+.ant-menu-submenu-title {
+  transition: var(--transition-base) !important;
+  margin: var(--spacing-xs) 0;
+}
+
+.ant-menu-item:hover,
+.ant-menu-submenu-title:hover {
+  transform: translateX(4px);
+  background: var(--dnd-bg-tertiary) !important;
+}
+
+.ant-menu-item:focus-visible,
+.ant-menu-submenu-title:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Плавные переходы для таблиц */
+.ant-table {
+  background: var(--dnd-bg-secondary) !important;
+  border-color: var(--dnd-border) !important;
+}
+
+.ant-table-thead > tr > th {
+  background: var(--color-primary) !important;
+  color: var(--dnd-text) !important;
+  border-color: var(--dnd-border) !important;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: var(--dnd-bg-tertiary) !important;
+}
+
+/* Улучшенные тени для карточек */
+.ant-card {
+  box-shadow: 0 4px 12px var(--dnd-shadow) !important;
+}
+
+[data-theme='dark'] .ant-card {
+  box-shadow: 0 4px 12px var(--dnd-shadow-dark) !important;
+}
+
+.ant-card:hover {
+  box-shadow: 0 8px 24px var(--dnd-shadow-dark) !important;
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dnd-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-light);
 }

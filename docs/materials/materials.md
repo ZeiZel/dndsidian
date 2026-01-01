@@ -88,11 +88,3 @@ import { RulesPdfList } from '@site/src/components';
 
 - [vk](https://vk.com/foundryyy)
 - [r/DnD - поиск по сабреддиту](https://www.reddit.com/r/DnD/)
-
----
-## Книги DND
-
-- [Начинающие правила](https://www.dungeonsanddragons.ru/bookfull/5ed/5e%20starter%20set%20-%20basic%20rules%20RUS.pdf)
-- [Руководство игрока](https://www.dungeonsanddragons.ru/bookfull/5ed/5e%20Players%20Handbook%20-%20Книга%20игрока%20RUS.pdf)
-- [Руководство мастера](https://www.dungeonsanddragons.ru/bookfull/5ed/5e%20Dungeon%20Masters%20Guide%20-%20Руководство%20Мастера%20RUS.pdf)
-- [Бестиарий](https://www.dungeonsanddragons.ru/bookfull/DND4e_Bestiariy_2_04_08_16.pdf)

@@ -1,0 +1,49 @@
+# Пример конфигурации Caddy для reverse proxy Foundry VTT
+# 
+# ИНСТРУКЦИИ ПО НАСТРОЙКЕ:
+# 1. Замените foundry.yourdomain.ru на ваш поддомен
+# 2. Замените your_email@example.com на ваш email для получения SSL-сертификата
+# 3. Замените 10.0.0.2 на IP-адрес Foundry VTT в WireGuard туннеле
+#    (этот IP будет доступен после настройки Pangolin туннеля)
+#
+# Для определения IP-адреса Foundry в туннеле:
+# - На локальной машине выполните: docker exec pangolin-client wg show
+# - Найдите IP-адрес интерфейса WireGuard (обычно начинается с 10.0.0.x)
+# - Используйте этот IP в строке reverse_proxy ниже
+
+foundry.yourdomain.ru {
+    # Reverse proxy на Foundry VTT через WireGuard туннель
+    # IP-адрес должен быть IP-адресом контейнера foundry в туннеле Pangolin
+    reverse_proxy 10.0.0.2:30000 {
+        # Настройки для WebSocket (необходимо для Foundry VTT)
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+        
+        # Таймауты для длительных соединений
+        transport http {
+            dial_timeout 10s
+            response_header_timeout 30s
+        }
+    }
+    
+    # Автоматическое получение SSL-сертификата от Let's Encrypt
+    tls your_email@example.com {
+        # Использование DNS-проверки (опционально, если порты 80/443 недоступны)
+        # dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    }
+    
+    # Логирование
+    log {
+        output file /var/log/caddy/foundry.log
+        format json
+    }
+    
+    # Сжатие для улучшения производительности
+    encode gzip zstd
+}
+
+# Дополнительные настройки (опционально)
+# Можно добавить другие поддомены или настройки безопасности
+

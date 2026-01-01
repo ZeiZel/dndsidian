@@ -1,0 +1,50 @@
+/* Стили для футера - единая стилистика D&D */
+
+.footer {
+  background: var(--dnd-bg-secondary) !important;
+  border-top: 2px solid var(--dnd-border) !important;
+  color: var(--dnd-text) !important;
+  padding: var(--spacing-xl) 0;
+  margin-top: var(--spacing-2xl);
+}
+
+.footer__title {
+  color: var(--color-primary) !important;
+  font-family: var(--font-family-base);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer__link-item {
+  color: var(--dnd-text) !important;
+  transition: var(--transition-base);
+  font-family: var(--font-family-base);
+  padding: var(--spacing-xs) 0;
+  display: inline-block;
+}
+
+.footer__link-item:hover {
+  color: var(--color-primary) !important;
+  transform: translateX(4px);
+}
+
+.footer__link-item:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
+.footer__copyright {
+  color: var(--dnd-text-muted) !important;
+  font-family: var(--font-family-base);
+  border-top: 1px solid var(--dnd-border);
+  padding-top: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+/* Тёмная тема для футера */
+[data-theme='dark'] .footer {
+  background: var(--dnd-bg-secondary) !important;
+  border-top-color: var(--dnd-border) !important;
+}
+

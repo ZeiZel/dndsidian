@@ -1,16 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Uncial+Antiqua&family=Lora:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import './animations.css';
+@import './dnd-theme.css';
+@import './sidebar.css';
+@import './navbar.css';
+@import './footer.css';
+@import './pdf-list.css';
+@import './pagination.css';
 
-:root {
-  --dnd-gold: #D4AF37;
-  --dnd-parchment: #FDF6E3;
-  --dnd-dark-leather: #3C2F2F;
-  --dnd-ink-black: #1A120B;
-  --dnd-scroll-shadow: rgba(0,0,0,0.3);
+/* Все цвета теперь используют CSS переменные из dnd-theme.css */
+
+/* Интеграция Ant Design компонентов */
+.ant-card {
+  border-color: var(--color-primary) !important;
+  transition: var(--transition-base);
 }
 
-[data-theme='dark'] {
-  --dnd-gold: #F4D03F;
-  --dnd-parchment: #2C1810;
-  --dnd-dark-leather: #1A0F0B;
-  --dnd-ink-black: #F5F5F5;
+.ant-card:hover {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 8px 24px var(--dnd-shadow) !important;
+}
+
+.ant-card:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+}
+
+.ant-btn-primary {
+  background: linear-gradient(145deg, var(--color-primary), var(--color-primary-dark)) !important;
+  border-color: var(--color-secondary) !important;
+  color: var(--dnd-text) !important;
+  font-family: var(--font-family-base) !important;
+  font-weight: 600 !important;
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(145deg, var(--color-primary-light), var(--color-primary)) !important;
+  border-color: var(--color-primary) !important;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px var(--dnd-shadow-dark) !important;
+}
+
+.ant-btn-primary:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+}
+
+.ant-typography {
+  color: var(--dnd-text) !important;
+}
+
+[data-theme='dark'] .ant-typography {
+  color: var(--dnd-text) !important;
 }

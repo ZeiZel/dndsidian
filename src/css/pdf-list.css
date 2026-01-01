@@ -1,0 +1,38 @@
+/* Стили для списка PDF файлов */
+
+.scroll-container {
+  width: 100%;
+  margin: var(--spacing-md) 0;
+}
+
+.dnd-pdf-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.pdf-scroll-item {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.pdf-link {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin: 0;
+  text-align: left;
+  text-decoration: none;
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.pdf-link + .pdf-link {
+  margin-top: var(--spacing-xs);
+}
+

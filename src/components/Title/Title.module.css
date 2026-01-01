@@ -1,0 +1,101 @@
+.title {
+	font-family: var(--font-family-base);
+	font-weight: 600;
+	line-height: var(--line-height-tight);
+	margin: 0;
+	padding: 0;
+	transition: var(--transition-base);
+}
+
+/* Уровни заголовков */
+.title-level-1 {
+	font-size: var(--font-size-5xl);
+	font-weight: 700;
+	margin-bottom: var(--spacing-lg);
+	padding-bottom: var(--spacing-sm);
+	border-bottom: 2px solid var(--dnd-border);
+}
+
+.title-level-2 {
+	font-size: var(--font-size-4xl);
+	font-weight: 700;
+	margin-bottom: var(--spacing-md);
+	margin-top: var(--spacing-xl);
+	padding-bottom: var(--spacing-sm);
+	border-bottom: 2px solid var(--dnd-border);
+}
+
+.title-level-3 {
+	font-size: var(--font-size-3xl);
+	font-weight: 600;
+	margin-bottom: var(--spacing-md);
+	margin-top: var(--spacing-lg);
+	padding-bottom: var(--spacing-xs);
+	border-bottom: 1px solid var(--dnd-border);
+}
+
+.title-level-4 {
+	font-size: var(--font-size-2xl);
+	font-weight: 600;
+	margin-bottom: var(--spacing-sm);
+	margin-top: var(--spacing-lg);
+}
+
+.title-level-5 {
+	font-size: var(--font-size-xl);
+	font-weight: 600;
+	margin-bottom: var(--spacing-sm);
+	margin-top: var(--spacing-md);
+}
+
+.title-level-6 {
+	font-size: var(--font-size-lg);
+	font-weight: 600;
+	margin-bottom: var(--spacing-sm);
+	margin-top: var(--spacing-md);
+}
+
+/* Appearance варианты */
+.appearance-default {
+	color: var(--dnd-text);
+}
+
+.appearance-primary {
+	color: var(--color-primary);
+}
+
+.title-level-1.appearance-primary,
+.title-level-2.appearance-primary {
+	border-bottom-color: var(--color-primary);
+}
+
+.appearance-secondary {
+	color: var(--color-secondary);
+}
+
+.appearance-danger {
+	color: var(--color-danger);
+}
+
+/* Spacing между заголовками и контентом */
+.title + * {
+	margin-top: var(--spacing-md);
+}
+
+/* Доступность - focus states */
+.title:focus-visible {
+	outline: 2px solid var(--color-primary-focus);
+	outline-offset: 4px;
+	border-radius: var(--border-radius-sm);
+}
+
+/* Тёмная тема */
+[data-theme='dark'] .title-level-1.appearance-primary,
+[data-theme='dark'] .title-level-2.appearance-primary {
+	color: var(--color-primary-light);
+}
+
+[data-theme='dark'] .appearance-default {
+	color: var(--dnd-text);
+}
+

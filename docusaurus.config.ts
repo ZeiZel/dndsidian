@@ -117,7 +117,7 @@ const themeConfig: ThemeConfig = {
 const docusaurus = async (): Promise<Config> => {
 	return {
 		title: 'D&D',
-		tagline: 'D&D system',
+		tagline: 'Централизованная база знаний для сообщества D&D',
 		favicon: 'img/favicon.ico',
 		future: {
 			v4: true,
@@ -133,6 +133,13 @@ const docusaurus = async (): Promise<Config> => {
 		},
 		presets: [['classic', classicPreset]],
 		themeConfig,
+		markdown: {
+			mdx1Compat: {
+				comments: true,
+				admonitions: true,
+				headingIds: true,
+			},
+		},
 	};
 };
 

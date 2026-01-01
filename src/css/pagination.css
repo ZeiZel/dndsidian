@@ -1,0 +1,91 @@
+/* Стили для пагинации (предыдущая/следующая страница) */
+
+.pagination-nav {
+  display: flex;
+  gap: var(--spacing-md);
+  margin: var(--spacing-xl) 0;
+  padding: 0;
+}
+
+.pagination-nav__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pagination-nav__link {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--dnd-bg-secondary);
+  border: 2px solid var(--dnd-border);
+  border-radius: var(--border-radius-lg);
+  text-decoration: none;
+  color: var(--dnd-text);
+  transition: var(--transition-base);
+  min-height: 80px;
+  justify-content: center;
+}
+
+.pagination-nav__link:hover {
+  background: var(--dnd-bg-tertiary);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--dnd-shadow);
+}
+
+.pagination-nav__link:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+}
+
+.pagination-nav__label {
+  font-family: var(--font-family-base);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pagination-nav__sublabel {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--dnd-text);
+  line-height: var(--line-height-normal);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.pagination-nav__item--next {
+  text-align: right;
+}
+
+.pagination-nav__item--next .pagination-nav__link {
+  align-items: flex-end;
+}
+
+.pagination-nav__item--prev {
+  text-align: left;
+}
+
+.pagination-nav__item--prev .pagination-nav__link {
+  align-items: flex-start;
+}
+
+/* Тёмная тема */
+[data-theme='dark'] .pagination-nav__link {
+  background: var(--dnd-bg-secondary);
+  border-color: var(--dnd-border);
+}
+
+[data-theme='dark'] .pagination-nav__link:hover {
+  background: var(--dnd-bg-tertiary);
+  border-color: var(--color-primary);
+}
+
