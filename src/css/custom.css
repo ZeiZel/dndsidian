@@ -100,6 +100,7 @@ a.ant-btn-primary {
   color: var(--dnd-text) !important;
 }
 
+html[data-theme='dark'] .ant-typography,
 [data-theme='dark'] .ant-typography {
   color: var(--dnd-text) !important;
 }

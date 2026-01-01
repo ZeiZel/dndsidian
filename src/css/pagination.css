@@ -79,11 +79,13 @@
 }
 
 /* Тёмная тема */
+html[data-theme='dark'] .pagination-nav__link,
 [data-theme='dark'] .pagination-nav__link {
   background: var(--dnd-bg-secondary);
   border-color: var(--dnd-border);
 }
 
+html[data-theme='dark'] .pagination-nav__link:hover,
 [data-theme='dark'] .pagination-nav__link:hover {
   background: var(--dnd-bg-tertiary);
   border-color: var(--color-primary);

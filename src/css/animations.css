@@ -110,6 +110,7 @@ table {
 }
 
 /* Улучшенные переходы для темной темы */
+html[data-theme='dark'],
 [data-theme='dark'] {
 	transition: background-color 0.3s ease, color 0.3s ease;
 }

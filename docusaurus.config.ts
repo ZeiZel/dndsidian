@@ -40,7 +40,9 @@ const classicPreset: Options = {
 const themeConfig: ThemeConfig = {
 	image: 'img/logo.png',
 	colorMode: {
+		defaultMode: 'light',
 		respectPrefersColorScheme: true,
+		disableSwitch: false,
 	},
 	navbar: {
 		title: 'dndsidian',

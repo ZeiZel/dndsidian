@@ -91,6 +91,7 @@
   --z-tooltip: 1070;
 }
 
+html[data-theme='dark'],
 [data-theme='dark'] {
   /* Цвета - Primary (золотой акцент) */
   --color-primary: #D4B877;
@@ -294,6 +295,8 @@ body {
 }
 
 /* Тёмная тема - более тонкий эффект */
+html[data-theme='dark'],
+html[data-theme='dark'] body,
 [data-theme='dark'] html,
 [data-theme='dark'] body {
   background-image: 
@@ -302,6 +305,7 @@ body {
   background-size: 25px 25px, 50px 50px;
 }
 
+html[data-theme='dark'] body::before,
 [data-theme='dark'] body::before {
   background-image: 
     repeating-linear-gradient(
@@ -370,10 +374,13 @@ h2, h3 {
   margin-top: var(--spacing-xl);
 }
 
+html[data-theme='dark'] h1,
 [data-theme='dark'] h1 {
   color: var(--color-primary-light);
 }
 
+html[data-theme='dark'] h2,
+html[data-theme='dark'] h3,
 [data-theme='dark'] h2,
 [data-theme='dark'] h3 {
   color: var(--color-primary);
@@ -591,6 +598,7 @@ tr:focus-visible {
   box-shadow: 0 4px 12px var(--dnd-shadow) !important;
 }
 
+html[data-theme='dark'] .ant-card,
 [data-theme='dark'] .ant-card {
   box-shadow: 0 4px 12px var(--dnd-shadow-dark) !important;
 }

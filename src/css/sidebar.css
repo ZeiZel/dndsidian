@@ -102,10 +102,12 @@
 }
 
 /* Тёмная тема для сайдбара */
+html[data-theme='dark'] .theme-doc-sidebar-container,
 [data-theme='dark'] .theme-doc-sidebar-container {
   background: var(--dnd-bg-secondary) !important;
 }
 
+html[data-theme='dark'] .menu__link--active,
 [data-theme='dark'] .menu__link--active {
   background: var(--color-primary) !important;
   color: var(--dnd-text) !important;

@@ -43,6 +43,7 @@
 }
 
 /* Тёмная тема для футера */
+html[data-theme='dark'] .footer,
 [data-theme='dark'] .footer {
   background: var(--dnd-bg-secondary) !important;
   border-top-color: var(--dnd-border) !important;

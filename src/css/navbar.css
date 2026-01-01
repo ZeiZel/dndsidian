@@ -112,11 +112,14 @@
 }
 
 /* Тёмная тема для навбара */
+html[data-theme='dark'] .navbar,
 [data-theme='dark'] .navbar {
   background: var(--dnd-bg-secondary) !important;
   border-bottom-color: var(--dnd-border) !important;
 }
 
+html[data-theme='dark'] .navbar__item:hover,
+html[data-theme='dark'] .navbar__link:hover,
 [data-theme='dark'] .navbar__item:hover,
 [data-theme='dark'] .navbar__link:hover {
   background: var(--dnd-bg-tertiary) !important;
