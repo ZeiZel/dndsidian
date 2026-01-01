@@ -399,10 +399,24 @@ a:focus-visible {
   border-radius: var(--border-radius-sm);
 }
 
-/* Кнопки */
+/* Кнопки - убираем все обводки */
+button,
+button::before,
+button::after,
+.dnd-button,
+.dnd-button::before,
+.dnd-button::after {
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border: none !important;
+}
+
 .dnd-button {
-  background: linear-gradient(145deg, var(--color-primary), var(--color-primary-dark));
-  border: 2px solid var(--color-secondary);
+  background: var(--color-primary);
+  border: none !important;
+  border-bottom: none !important;
   color: var(--dnd-text);
   font-family: var(--font-family-base);
   font-weight: 600;
@@ -411,19 +425,59 @@ a:focus-visible {
   border-radius: var(--border-radius-md);
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 4px 12px var(--dnd-shadow);
-  transition: var(--transition-base);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.dnd-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary-light);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.dnd-button > * {
+  position: relative;
+  z-index: 1;
+}
+
+.dnd-button:hover,
+.dnd-button:focus,
+.dnd-button:active {
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 
 .dnd-button:hover {
-  background: linear-gradient(145deg, var(--color-primary-light), var(--color-primary));
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px var(--dnd-shadow-dark);
+  background: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dnd-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dnd-button:focus-visible {
   outline: 2px solid var(--color-primary-focus);
   outline-offset: 2px;
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 
 /* Код блоки */

@@ -25,24 +25,75 @@
   outline-offset: 2px;
 }
 
+/* Убираем все обводки у всех кнопок Ant Design */
+.ant-btn,
+.ant-btn-primary,
+.ant-btn-default,
+.ant-btn-dashed,
+.ant-btn-text,
+.ant-btn-link,
+button.ant-btn,
+button.ant-btn-primary,
+a.ant-btn,
+a.ant-btn-primary {
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border: none !important;
+}
+
+.ant-btn::before,
+.ant-btn::after,
+.ant-btn-primary::before,
+.ant-btn-primary::after {
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border: none !important;
+}
+
 .ant-btn-primary {
-  background: linear-gradient(145deg, var(--color-primary), var(--color-primary-dark)) !important;
-  border-color: var(--color-secondary) !important;
+  background: var(--color-primary) !important;
+  border: none !important;
+  border-bottom: none !important;
   color: var(--dnd-text) !important;
   font-family: var(--font-family-base) !important;
   font-weight: 600 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus,
+.ant-btn-primary:active {
+  background: var(--color-primary-light) !important;
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 
 .ant-btn-primary:hover {
-  background: linear-gradient(145deg, var(--color-primary-light), var(--color-primary)) !important;
-  border-color: var(--color-primary) !important;
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px var(--dnd-shadow-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.ant-btn-primary:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
 .ant-btn-primary:focus-visible {
-  outline: 2px solid var(--color-primary-focus);
-  outline-offset: 2px;
+  outline: 2px solid var(--color-primary-focus) !important;
+  outline-offset: 2px !important;
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 
 .ant-typography {

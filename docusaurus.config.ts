@@ -38,7 +38,7 @@ const classicPreset: Options = {
 };
 
 const themeConfig: ThemeConfig = {
-	image: 'img/docusaurus-social-card.jpg',
+	image: 'img/logo.png',
 	colorMode: {
 		respectPrefersColorScheme: true,
 	},
@@ -46,24 +46,16 @@ const themeConfig: ThemeConfig = {
 		title: 'dndsidian',
 		logo: {
 			alt: 'dndsidian-world',
-			src: 'img/logo.svg',
+			src: 'img/logo.png',
 		},
 		items: [
 			{
-				type: 'localeDropdown',
-				position: 'right',
-			},
-			{
-				type: 'docsVersionDropdown',
-			},
-			{
-				// Next
 				type: 'docSidebar',
 				sidebarId: 'tutorialSidebar',
 				position: 'left',
-				label: 'Tutorial',
+				label: 'Документация',
 			},
-			{ to: '/about', label: 'About', position: 'left' },
+			{ to: '/about', label: 'О проекте', position: 'left' },
 			{
 				href: selfHostedConfig.urls.repo,
 				label: 'GitHub',
@@ -75,28 +67,28 @@ const themeConfig: ThemeConfig = {
 		style: 'dark',
 		links: [
 			{
-				title: 'Docs',
+				title: 'Документация',
 				items: [
 					{
-						label: 'Docs',
+						label: 'Интро',
 						to: '/docs/intro',
 					},
 				],
 			},
 			{
-				title: 'Community',
+				title: 'Сообщество',
 				items: [
 					{
-						label: 'Stoat Server of dndsidian',
+						label: 'Stoat сервер сообщества dndsidian',
 						href: 'https://stoat.zeizel.ru',
 					},
 				],
 			},
 			{
-				title: 'More',
+				title: 'Ещё',
 				items: [
 					{
-						label: 'About',
+						label: 'О проекте',
 						to: '/about',
 					},
 					{
@@ -106,7 +98,7 @@ const themeConfig: ThemeConfig = {
 				],
 			},
 		],
-		copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+		copyright: `ZeiZel ${new Date().getFullYear()} - all rights on DnD 5e reserved by Wizards of the Coast`,
 	},
 	prism: {
 		theme: prismThemes.github,
