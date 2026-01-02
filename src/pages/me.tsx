@@ -18,20 +18,20 @@ export default function MePage(): ReactNode {
 						Об авторе
 					</Title>
 
-					<section style={{ marginBottom: '3rem' }}>
-						<Title level={2} appearance="default" style={{ marginBottom: '1rem' }}>
-							👋 Привет!
-						</Title>
-						<P appearance="default">
-							Меня зовут <strong>ZeiZel</strong>, и я создал D&D Sidian — проект, который
-							помогает русскоязычным игрокам погрузиться в мир Dungeons & Dragons.
-						</P>
-						<P appearance="default">
-							Я разработчик и энтузиаст настольных ролевых игр. D&D изменил мою жизнь, дав
-							возможность создавать истории, встречать удивительных людей и развивать
-							креативность. Этот проект — моя попытка поделиться этой магией с другими.
-						</P>
-					</section>
+				<section style={{ marginBottom: '3rem' }}>
+					<Title level={2} appearance="default" style={{ marginBottom: '1rem' }}>
+						Привет!
+					</Title>
+					<P appearance="default">
+						Меня зовут <strong>ZeiZel</strong>, и я создал D&D Sidian - проект, который
+						помогает русскоязычным игрокам разобраться в Dungeons & Dragons.
+					</P>
+					<P appearance="default">
+						Я разработчик и фанат настольных ролевых игр. D&D дал мне возможность создавать истории, 
+						находить единомышленников и прокачивать креативность. Этот проект - попытка собрать в 
+						одном месте всё, что нужно для игры, и сделать его доступным для русскоязычного комьюнити.
+					</P>
+				</section>
 
 					<section style={{ marginBottom: '3rem' }}>
 						<Title level={2} appearance="default" style={{ marginBottom: '1rem' }}>
@@ -78,14 +78,14 @@ export default function MePage(): ReactNode {
 						</div>
 					</section>
 
-					<section style={{ marginBottom: '3rem' }}>
-						<Title level={2} appearance="default" style={{ marginBottom: '1rem' }}>
-							<RocketOutlined /> Проекты для игроков
-						</Title>
-						<P appearance="default">
-							D&D Sidian — это главный проект, но я планирую развивать экосистему
-							инструментов для русскоязычного D&D-сообщества:
-						</P>
+				<section style={{ marginBottom: '3rem' }}>
+					<Title level={2} appearance="default" style={{ marginBottom: '1rem' }}>
+						<RocketOutlined /> Проекты для игроков
+					</Title>
+					<P appearance="default">
+						D&D Sidian - это главный проект, но я планирую развивать экосистему
+						инструментов для русскоязычного D&D-сообщества:
+					</P>
 
 						<div
 							style={{
@@ -103,9 +103,9 @@ export default function MePage(): ReactNode {
 									background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)',
 								}}
 							>
-								<Title level={3} appearance="secondary" style={{ marginBottom: '0.5rem' }}>
-									🎨 D&D Sidian
-								</Title>
+							<Title level={3} appearance="secondary" style={{ marginBottom: '0.5rem' }}>
+								D&D Sidian
+							</Title>
 								<P appearance="default">
 									<strong>Что это:</strong> Комплексная документация на русском языке
 								</P>
@@ -132,9 +132,9 @@ export default function MePage(): ReactNode {
 									background: 'linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(245, 87, 108, 0.1) 100%)',
 								}}
 							>
-								<Title level={3} appearance="secondary" style={{ marginBottom: '0.5rem' }}>
-									🔮 Будущие проекты
-								</Title>
+							<Title level={3} appearance="secondary" style={{ marginBottom: '0.5rem' }}>
+								Будущие проекты
+							</Title>
 								<P appearance="default">
 									Планирую развивать дополнительные инструменты для игроков:
 								</P>
@@ -151,39 +151,38 @@ export default function MePage(): ReactNode {
 						</div>
 					</section>
 
-					<section style={{ marginBottom: '3rem' }}>
-						<Title level={2} appearance="default" style={{ marginBottom: '1rem' }}>
-							🎯 Как я могу помочь игрокам?
-						</Title>
-						<P appearance="default">Через этот проект я стремлюсь:</P>
-						<ul style={{ paddingLeft: '2rem', lineHeight: '1.8' }}>
-							<li>
-								<strong>Снизить порог входа</strong> — сделать D&D доступным для
-								русскоязычных новичков
-							</li>
-							<li>
-								<strong>Собрать знания в одном месте</strong> — не нужно искать информацию
-								по десяткам сайтов
-							</li>
-							<li>
-								<strong>Предоставить практические гайды</strong> — не только правила, но и
-								советы по организации
-							</li>
-							<li>
-								<strong>Создать сообщество</strong> — где игроки могут делиться опытом и
-								помогать друг другу
-							</li>
-						</ul>
-					</section>
+				<section style={{ marginBottom: '3rem' }}>
+					<Title level={2} appearance="default" style={{ marginBottom: '1rem' }}>
+						Что здесь есть
+					</Title>
+					<P appearance="default">Основные цели проекта:</P>
+					<ul style={{ paddingLeft: '2rem', lineHeight: '1.8' }}>
+						<li>
+							<strong>Снизить порог входа</strong> - сделать D&D доступным для
+							русскоязычных новичков
+						</li>
+						<li>
+							<strong>Собрать знания в одном месте</strong> - не нужно искать информацию
+							по десяткам сайтов
+						</li>
+						<li>
+							<strong>Практические гайды</strong> - не только правила, но и
+							советы по организации игр
+						</li>
+						<li>
+							<strong>База для сообщества</strong> - где игроки могут делиться опытом и
+							помогать друг другу
+						</li>
+					</ul>
+				</section>
 
-					<section style={{ marginBottom: '3rem' }}>
-						<Title level={2} appearance="default" style={{ marginBottom: '1rem' }}>
-							💬 Свяжитесь со мной
-						</Title>
-						<P appearance="default">
-							Если у вас есть предложения, нашли ошибку или просто хотите поделиться
-							фидбеком:
-						</P>
+				<section style={{ marginBottom: '3rem' }}>
+					<Title level={2} appearance="default" style={{ marginBottom: '1rem' }}>
+						Контакты
+					</Title>
+					<P appearance="default">
+						Если нашли ошибку, есть предложения или хотите внести свой вклад:
+					</P>
 						<ul style={{ paddingLeft: '2rem', lineHeight: '1.8' }}>
 							<li>
 								<strong>GitHub Issues:</strong>{' '}
@@ -201,18 +200,17 @@ export default function MePage(): ReactNode {
 						</ul>
 					</section>
 
-					<section style={{ marginBottom: '3rem', textAlign: 'center' }}>
-						<Title level={2} appearance="primary" style={{ marginBottom: '1rem' }}>
-							Благодарности
-						</Title>
-						<P appearance="default">
-							Огромное спасибо сообществу D&D — игрокам, мастерам, создателям контента. Вы
-							вдохновляете меня продолжать развивать этот проект.
-						</P>
-						<P appearance="secondary" style={{ marginTop: '1rem', fontSize: '1.2rem' }}>
-							Пусть ваши броски будут критичными! 🎲✨
-						</P>
-					</section>
+				<section style={{ marginBottom: '3rem', textAlign: 'center' }}>
+					<Title level={2} appearance="primary" style={{ marginBottom: '1rem' }}>
+						Благодарности
+					</Title>
+					<P appearance="default">
+						Спасибо русскоязычному D&D-сообществу за поддержку и обратную связь.
+					</P>
+					<P appearance="secondary" style={{ marginTop: '1rem', fontSize: '1.2rem' }}>
+						Пусть ваши броски будут критичными! 🎲
+					</P>
+				</section>
 				</div>
 			</main>
 		</Layout>

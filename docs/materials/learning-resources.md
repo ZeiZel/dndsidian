@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# 📚 Обучающие ресурсы
+# Обучающие ресурсы
 
 import { RulesPdfList } from '@site/src/components';
 
