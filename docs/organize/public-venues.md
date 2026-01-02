@@ -318,7 +318,7 @@ sidebar_position: 4
 
 ## 📚 Дополнительные ресурсы
 
-- [Организация игры (обзор)](/docs/organize/organize-overview)
+- [Организация игры (обзор)](/docs/organize/)
 - [Поиск группы](/docs/organize/finding-group)
 - [Игра дома](/docs/organize/home-game)
 

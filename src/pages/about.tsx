@@ -10,7 +10,7 @@ export default function AboutPage(): ReactNode {
 	return (
 		<Layout
 			title={`О проекте - ${siteConfig.title}`}
-			description='Узнайте больше о проекте D&D Sidian и Dungeons & Dragons'
+			description='Узнайте больше о проекте D&DSidian и Dungeons & Dragons'
 		>
 			<main style={{ padding: '2rem 0', maxWidth: '900px', margin: '0 auto' }}>
 				<div style={{ padding: '0 1rem' }}>
@@ -48,10 +48,10 @@ export default function AboutPage(): ReactNode {
 
 					<section style={{ marginBottom: '3rem' }}>
 						<Title level={2} appearance="default" style={{ marginBottom: '1rem' }}>
-							Что такое D&D Sidian?
+							Что такое D&DSidian?
 						</Title>
 						<P appearance="default" style={{ marginBottom: '1rem', lineHeight: '1.8' }}>
-							<strong>D&D Sidian</strong> — это комплексный ресурс, объединяющий все правила, инструменты 
+							<strong>D&DSidian</strong> — это комплексный ресурс, объединяющий все правила, инструменты 
 							и материалы для настольной ролевой игры "Dungeons & Dragons" 5-й редакции в одном месте.
 						</P>
 						<P appearance="default" style={{ marginBottom: '1rem', lineHeight: '1.8' }}>

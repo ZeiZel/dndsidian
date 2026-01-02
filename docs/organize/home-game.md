@@ -404,7 +404,7 @@ sidebar_position: 2
 
 ## Дополнительные ресурсы
 
-- [Организация игры (обзор)](/docs/organize/organize-overview)
+- [Организация игры (обзор)](/docs/organize/)
 - [Роль мастера](/docs/roles/master)
 - [Материалы для игры](/docs/materials)
 

@@ -132,7 +132,7 @@ function HomepageHeader() {
 					</P>
 				</motion.div>
 				<motion.div variants={itemVariants} className={styles.buttons}>
-					<Link to='/docs/intro'>
+					<Link to='/docs'>
 						<Button
 							type='primary'
 							size='large'

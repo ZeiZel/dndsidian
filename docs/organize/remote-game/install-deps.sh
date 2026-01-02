@@ -17,3 +17,5 @@ echo "Python: $(python3 --version)"
 
 echo "Установка завершена успешно!"
 
+
+

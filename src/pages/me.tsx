@@ -10,7 +10,7 @@ export default function MePage(): ReactNode {
 	return (
 		<Layout
 			title={`Об авторе - ${siteConfig.title}`}
-			description='Узнайте больше об авторе проекта D&D Sidian'
+			description='Узнайте больше об авторе проекта D&DSidian'
 		>
 			<main style={{ padding: '2rem 0', maxWidth: '900px', margin: '0 auto' }}>
 				<div style={{ padding: '0 1rem' }}>
@@ -23,7 +23,7 @@ export default function MePage(): ReactNode {
 						Привет!
 					</Title>
 					<P appearance="default">
-						Меня зовут <strong>ZeiZel</strong>, и я создал D&D Sidian - проект, который
+						Меня зовут <strong>ZeiZel</strong>, и я создал D&DSidian - проект, который
 						помогает русскоязычным игрокам разобраться в Dungeons & Dragons.
 					</P>
 					<P appearance="default">
@@ -83,8 +83,7 @@ export default function MePage(): ReactNode {
 						<RocketOutlined /> Проекты для игроков
 					</Title>
 					<P appearance="default">
-						D&D Sidian - это главный проект, но я планирую развивать экосистему
-						инструментов для русскоязычного D&D-сообщества:
+						D&DSidian - это главный проект, содержащий все полезные материалы для русскоязычного D&D-сообщества:
 					</P>
 
 						<div
@@ -104,7 +103,7 @@ export default function MePage(): ReactNode {
 								}}
 							>
 							<Title level={3} appearance="secondary" style={{ marginBottom: '0.5rem' }}>
-								D&D Sidian
+								D&DSidian
 							</Title>
 								<P appearance="default">
 									<strong>Что это:</strong> Комплексная документация на русском языке
@@ -136,13 +135,14 @@ export default function MePage(): ReactNode {
 								Будущие проекты
 							</Title>
 								<P appearance="default">
-									Планирую развивать дополнительные инструменты для игроков:
+									В необозримом будущем очень вероятно возникновение подобных инструментов, как all-in-one проект:
 								</P>
 								<ul style={{ marginTop: '0.5rem', paddingLeft: '1.5rem' }}>
-									<li>Генератор персонажей (web-приложение)</li>
+									<li>Генератор персонажей</li>
 									<li>Трекер кампаний и сессий</li>
 									<li>Коллекция переведённых модулей</li>
-									<li>Инструменты для мастеров (NPC, столкновения)</li>
+									<li>Инструменты для мастеров</li>
+									<li>Аналог Foundry VTT</li>
 								</ul>
 								<P appearance="default" style={{ marginTop: '1rem', fontStyle: 'italic' }}>
 									Следите за обновлениями на GitHub!

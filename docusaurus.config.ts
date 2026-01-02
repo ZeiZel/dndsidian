@@ -72,10 +72,10 @@ const themeConfig: ThemeConfig = {
 			{
 				title: 'Документация',
 				items: [
-					{
-						label: 'Интро',
-						to: '/docs/intro',
-					},
+			{
+				label: 'Интро',
+				to: '/docs/',
+			},
 				],
 			},
 			{

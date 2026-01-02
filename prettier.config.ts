@@ -13,7 +13,6 @@ const config: Config = {
     jsxSingleQuote: true,
     semi: true,
     trailingComma: 'all',
-    quoteProps: "consistent",
 }
 
 export default config;

@@ -7,6 +7,7 @@ sidebar_position: 3
 ## Музыка и эмбиенты
 
 **Основные платформы:**
+
 - **[Tabletopaudio](https://tabletopaudio.com/)** — готовые эмбиенты для D&D
 - **[Syrinscape](https://syrinscape.com/)** — профессиональные звуки ($10/месяц)
 - **[Incompetech](https://incompetech.com/music/)** — бесплатная музыка
@@ -17,6 +18,7 @@ sidebar_position: 3
 ## Категории эмбиентов
 
 **По локации:**
+
 - Таверна
 - Лес
 - Бой
@@ -25,4 +27,3 @@ sidebar_position: 3
 - Мистическая локация
 
 **Поиск на YouTube:** "D&D ambience [тип локации]"
-

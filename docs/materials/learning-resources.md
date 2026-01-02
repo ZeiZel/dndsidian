@@ -21,11 +21,13 @@ import { RulesPdfList } from '@site/src/components';
 ## Видео-гайды и стримы
 
 ### Англоязычные
+
 - **[Critical Role](https://www.youtube.com/@criticalrole)** — легендарный стрим
 - **[Dimension 20](https://www.youtube.com/@dimension20show)** — комедийный D&D
 - **[Matthew Colville](https://www.youtube.com/@mcolville)** — гайды для мастеров
 
 ### Русскоязычные
+
 - **[DnD.su YouTube](https://www.youtube.com/@dndsu)** — обучающие видео
 
 ## Книги
@@ -39,4 +41,3 @@ import { RulesPdfList } from '@site/src/components';
 - Xanathar's Guide to Everything
 - Tasha's Cauldron of Everything
 - Mordenkainen Presents: Monsters of the Multiverse
-

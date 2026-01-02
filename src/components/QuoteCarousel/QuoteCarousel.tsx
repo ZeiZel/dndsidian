@@ -100,3 +100,5 @@ export const QuoteCarousel: React.FC = () => {
 
 export default QuoteCarousel;
 
+
+

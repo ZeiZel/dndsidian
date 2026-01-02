@@ -449,7 +449,7 @@ sidebar_position: 5
 
 ## Дополнительные ресурсы
 
-- [Организация игры (обзор)](/docs/organize/organize-overview)
+- [Организация игры (обзор)](/docs/organize/)
 - [Роль игрока](/docs/roles/player)
 - [Роль мастера](/docs/roles/master)
 
