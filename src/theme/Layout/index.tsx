@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import type {  ReactNode } from 'react';
 import clsx from 'clsx';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
 import {
@@ -18,14 +18,13 @@ import Root from '@theme/Root';
 import { AntdProvider } from '@site/src/components/AntdProvider';
 import styles from './styles.module.css';
 
-export default function Layout(props: Props): ReactNode {
-	const {
-		children,
-		noFooter,
-		wrapperClassName,
-		title,
-		description,
-	} = props;
+export default function Layout({
+								   children,
+								   noFooter,
+								   wrapperClassName,
+								   title,
+								   description,
+							   }: Props): ReactNode {
 
 	useKeyboardNavigation();
 

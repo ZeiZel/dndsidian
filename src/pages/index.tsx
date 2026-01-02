@@ -49,7 +49,6 @@ function HomepageHeader() {
 			const rect = bannerRef.current.getBoundingClientRect();
 			const centerX = rect.left + rect.width / 2;
 			const centerY = rect.top + rect.height / 2;
-			// Движение в противоположную сторону от курсора
 			const moveX = -(e.clientX - centerX) * 0.03;
 			const moveY = -(e.clientY - centerY) * 0.03;
 			x.set(moveX);
@@ -101,7 +100,7 @@ function HomepageHeader() {
 				transition={{
 					duration: 0.6,
 					ease: 'easeOut',
-					staggerChildren: 0.2,
+					delayChildren: 0.2,
 				}}
 			>
 				<motion.div variants={itemVariants}>

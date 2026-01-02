@@ -1,5 +1,9 @@
 /* Стили для сайдбара - единая стилистика D&D */
 
+.navbar-sidebar {
+  height: 100dvh;
+}
+
 .theme-doc-sidebar-container {
   background: var(--dnd-bg-secondary) !important;
   box-shadow: 2px 0 8px var(--dnd-shadow) !important;
