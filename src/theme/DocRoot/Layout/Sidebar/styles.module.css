@@ -1,0 +1,28 @@
+/* Стили для DocRoot Layout Sidebar */
+
+.docSidebarContainer {
+  display: flex;
+  flex-direction: column;
+  width: var(--doc-sidebar-width);
+  transition: width var(--ifm-transition-fast) ease;
+  clip-path: inset(0);
+}
+
+.docSidebarContainerHidden {
+  width: 0;
+  overflow: hidden;
+}
+
+.sidebarViewport {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: var(--doc-sidebar-width);
+  transition: opacity var(--ifm-transition-fast) ease;
+}
+
+.sidebarViewportHidden {
+  opacity: 0;
+  visibility: hidden;
+}
+

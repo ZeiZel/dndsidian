@@ -1,0 +1,23 @@
+/* Стили для Desktop Sidebar компонента */
+
+.sidebar {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebarWithHideableNavbar {
+  padding-top: var(--ifm-navbar-height);
+}
+
+.sidebarHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebarLogo {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+

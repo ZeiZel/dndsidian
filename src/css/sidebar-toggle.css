@@ -1,0 +1,42 @@
+/* Sidebar toggle button styles */
+.sidebar-toggle-button {
+	position: fixed;
+	top: 70px;
+	left: 16px;
+	z-index: 100;
+	background: var(--dnd-bg-secondary);
+	border: 2px solid var(--dnd-border);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-sm) var(--spacing-md);
+	cursor: pointer;
+	color: var(--dnd-text);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: var(--font-size-xl);
+	height: 40px;
+	width: 40px;
+	box-shadow: 0 2px 8px var(--dnd-shadow);
+	transition: all 0.3s ease;
+}
+
+.sidebar-toggle-button svg {
+	width: 20px;
+	height: 20px;
+}
+
+/* Hide on mobile - mobile has its own sidebar */
+@media (max-width: 996px) {
+	.sidebar-toggle-button {
+		display: none !important;
+	}
+}
+
+/* Dark theme */
+html[data-theme='dark'] .sidebar-toggle-button,
+[data-theme='dark'] .sidebar-toggle-button {
+	background: var(--dnd-bg-secondary);
+	border-color: var(--dnd-border);
+	color: var(--dnd-text);
+}
+
