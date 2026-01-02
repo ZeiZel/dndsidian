@@ -1,0 +1,160 @@
+.gameplay-guide {
+	max-width: 900px;
+	margin: 2rem auto;
+	padding: 0 1rem;
+}
+
+.gameplay-steps {
+	margin-bottom: 2rem;
+}
+
+.gameplay-steps .ant-steps-item-icon {
+	font-size: 20px;
+}
+
+.step-content {
+	min-height: 400px;
+}
+
+.step-card {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+}
+
+.step-header {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.step-icon-large {
+	font-size: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 80px;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 50%;
+	backdrop-filter: blur(10px);
+}
+
+.step-header h2 {
+	color: white;
+	margin: 0;
+	font-size: 2rem;
+}
+
+.step-description {
+	font-size: 1.1rem;
+	line-height: 1.8;
+	margin-bottom: 2rem;
+	opacity: 0.95;
+}
+
+.step-example {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	padding: 1.5rem;
+	backdrop-filter: blur(10px);
+}
+
+.step-example h3 {
+	color: white;
+	margin-bottom: 1rem;
+	font-size: 1.2rem;
+}
+
+.dialogue {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.dialogue > div {
+	background: rgba(255, 255, 255, 0.15);
+	padding: 1rem;
+	border-radius: 8px;
+	border-left: 4px solid transparent;
+	line-height: 1.6;
+}
+
+.dialogue-dm {
+	border-left-color: #ffd700 !important;
+	background: rgba(255, 215, 0, 0.1) !important;
+}
+
+.dialogue-player {
+	border-left-color: #4ade80 !important;
+	background: rgba(74, 222, 128, 0.1) !important;
+}
+
+.dialogue-action {
+	border-left-color: #60a5fa !important;
+	background: rgba(96, 165, 250, 0.1) !important;
+	font-style: italic;
+}
+
+.speaker {
+	color: white;
+	display: inline-block;
+	margin-right: 0.5rem;
+}
+
+.action-text {
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.step-navigation {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+	.gameplay-guide {
+		padding: 0 0.5rem;
+		margin: 1rem auto;
+	}
+
+	.gameplay-steps .ant-steps-item-title {
+		font-size: 12px;
+	}
+
+	.step-header {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.step-icon-large {
+		width: 60px;
+		height: 60px;
+		font-size: 32px;
+	}
+
+	.step-header h2 {
+		font-size: 1.5rem;
+	}
+
+	.step-description {
+		font-size: 1rem;
+	}
+
+	.dialogue > div {
+		padding: 0.75rem;
+	}
+
+	.step-navigation {
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.step-navigation button {
+		flex: 1;
+		min-width: 120px;
+	}
+}
+

@@ -58,6 +58,7 @@ const themeConfig: ThemeConfig = {
 				label: 'Документация',
 			},
 			{ to: '/about', label: 'О проекте', position: 'left' },
+			{ to: '/me', label: 'Автор', position: 'left' },
 			{
 				href: selfHostedConfig.urls.repo,
 				label: 'GitHub',
@@ -92,6 +93,10 @@ const themeConfig: ThemeConfig = {
 					{
 						label: 'О проекте',
 						to: '/about',
+					},
+					{
+						label: 'Автор',
+						to: '/me',
 					},
 					{
 						label: 'GitHub',

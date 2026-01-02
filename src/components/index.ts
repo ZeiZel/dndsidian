@@ -5,5 +5,8 @@ export { AnimatedCard } from './AnimatedCard';
 export { FeatureCard } from './FeatureCard';
 export { Title } from './Title';
 export { P } from './P';
+export { DndQuiz } from './DndQuiz';
+export { GameplayGuide } from './GameplayGuide';
+export { QuoteCarousel } from './QuoteCarousel';
 export type { TitleProps, TitleLevel, Appearance as TitleAppearance } from './Title';
 export type { PProps, Appearance as PAppearance } from './P';

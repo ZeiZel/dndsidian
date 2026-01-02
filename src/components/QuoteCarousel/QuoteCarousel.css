@@ -1,0 +1,167 @@
+.quote-carousel {
+	max-width: 800px;
+	margin: 3rem auto;
+	padding: 0 1rem;
+}
+
+.quote-card {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	border-radius: 16px;
+	box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+	padding: 2.5rem 2rem;
+	text-align: center;
+	min-height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	overflow: hidden;
+}
+
+.quote-card::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -50%;
+	width: 200%;
+	height: 200%;
+	background: radial-gradient(
+		circle,
+		rgba(255, 255, 255, 0.1) 0%,
+		transparent 70%
+	);
+	pointer-events: none;
+}
+
+.quote-icon {
+	font-size: 80px;
+	color: rgba(255, 255, 255, 0.3);
+	line-height: 1;
+	margin-bottom: 1rem;
+	font-family: Georgia, serif;
+}
+
+.quote-text {
+	font-size: 1.4rem;
+	line-height: 1.8;
+	color: white;
+	margin: 1.5rem 0;
+	font-weight: 500;
+	font-style: italic;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+}
+
+.quote-author {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 2px solid rgba(255, 255, 255, 0.3);
+	position: relative;
+	z-index: 1;
+}
+
+.author-name {
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: white;
+	margin-bottom: 0.3rem;
+}
+
+.author-role {
+	font-size: 0.95rem;
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: 400;
+}
+
+.quote-indicators {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 1.5rem;
+	position: relative;
+	z-index: 1;
+}
+
+.indicator {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.4);
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.indicator:hover {
+	background: rgba(255, 255, 255, 0.7);
+	transform: scale(1.2);
+}
+
+.indicator.active {
+	background: white;
+	width: 30px;
+	border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+	.quote-carousel {
+		margin: 2rem auto;
+		padding: 0 0.5rem;
+	}
+
+	.quote-card {
+		padding: 2rem 1.5rem;
+		min-height: 280px;
+	}
+
+	.quote-icon {
+		font-size: 60px;
+	}
+
+	.quote-text {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		margin: 1rem 0;
+	}
+
+	.author-name {
+		font-size: 1rem;
+	}
+
+	.author-role {
+		font-size: 0.85rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.quote-card {
+		padding: 1.5rem 1rem;
+		min-height: 250px;
+	}
+
+	.quote-icon {
+		font-size: 50px;
+	}
+
+	.quote-text {
+		font-size: 1rem;
+	}
+
+	.quote-indicators {
+		gap: 8px;
+	}
+
+	.indicator {
+		width: 8px;
+		height: 8px;
+	}
+
+	.indicator.active {
+		width: 24px;
+	}
+}
+

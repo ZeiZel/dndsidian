@@ -681,4 +681,3 @@ sudo netstat -tulpn | grep -E '80|443|30000|51820'
 # Проверка firewall
 sudo ufw status verbose
 ```
- 
