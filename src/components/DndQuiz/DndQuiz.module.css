@@ -1,10 +1,20 @@
 .dnd-quiz,
 .dnd-quiz-result {
+	margin: 0 auto;
+	padding: 24px;
+
 	max-width: 700px;
-	margin: 2rem auto;
+
 	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 	border-radius: 12px;
-	padding: 2rem;
+
+	@media (max-width: 996px) {
+		padding: 16px;
+	}
+
+	@media (max-width: 576px) {
+		padding: 0;
+	}
 }
 
 .quiz-option {
@@ -19,6 +29,11 @@
 	transition: all 0.3s ease;
 	font-size: 16px;
 	line-height: 1.6;
+
+	@media (max-width: 768px) {
+		padding: 12px 16px;
+		font-size: 14px;
+	}
 }
 
 .quiz-option:hover {
@@ -37,6 +52,10 @@
 	font-size: 80px;
 	text-align: center;
 	margin: 1rem 0;
+
+	@media (max-width: 768px) {
+		font-size: 60px;
+	}
 }
 
 .recommended-classes {
@@ -64,23 +83,3 @@
 	font-weight: 600;
 	margin: 4px;
 }
-
-@media (max-width: 768px) {
-	.dnd-quiz,
-	.dnd-quiz-result {
-		padding: 1rem;
-		margin: 1rem;
-	}
-
-	.quiz-option {
-		padding: 12px 16px;
-		font-size: 14px;
-	}
-
-	.result-icon {
-		font-size: 60px;
-	}
-}
-
-
-

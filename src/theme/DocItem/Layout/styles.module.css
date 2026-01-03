@@ -1,14 +1,23 @@
-.docItemCol {
+.doc-item-col {
 	max-width: 75% !important;
-}
 
-.docItemContainer {
-	max-width: 100%;
-}
-
-@media (max-width: 996px) {
-	.docItemCol {
+	@media (max-width: 996px) {
 		max-width: 100% !important;
 	}
 }
 
+.doc-item-container {
+	max-width: 100%;
+}
+
+.doc-item-content {
+	padding: 40px;
+
+	@media (max-width: 996px) {
+		padding: 24px;
+	}
+
+	@media (max-width: 576px) {
+		padding: 24px 12px;
+	}
+}

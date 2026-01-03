@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+
 import { Card, Radio, Button, Progress, Space, Typography } from 'antd';
+import { RocketOutlined } from '@ant-design/icons';
+
 import { motion, AnimatePresence } from 'framer-motion';
-import { TrophyOutlined, RocketOutlined } from '@ant-design/icons';
-import './DndQuiz.css';
+import clsx from "clsx";
+
+import styles from './DndQuiz.module.css';
 
 const { Title, Paragraph } = Typography;
 
@@ -116,7 +120,7 @@ const playerTypes: PlayerType[] = [
 		type: 'actor',
 		name: 'Актёр',
 		description:
-			'Ты — настоящий ролевой игрок! Для тебя важна драма, эмоциональные сцены и глубокое погружение в персонажа. Ты создаёшь незабываемые истории.',
+			'Ты - настоящий ролевой игрок! Для тебя важна драма, эмоциональные сцены и глубокое погружение в персонажа. Ты создаёшь незабываемые истории.',
 		recommendedClasses: ['Бард', 'Плут', 'Колдун', 'Монах'],
 		icon: '🎭',
 	},
@@ -132,11 +136,55 @@ const playerTypes: PlayerType[] = [
 		type: 'social',
 		name: 'Социальный игрок',
 		description:
-			'Ты — душа компании! Для тебя важно взаимодействие с другими игроками и NPC, дипломатия, командная работа и создание связей. Ты делаешь игру лучше для всех.',
+			'Ты - душа компании! Для тебя важно взаимодействие с другими игроками и NPC, дипломатия, командная работа и создание связей. Ты делаешь игру лучше для всех.',
 		recommendedClasses: ['Бард', 'Жрец', 'Паладин', 'Чародей'],
 		icon: '🤝',
 	},
 ];
+
+const DNDResult = ({ icon, name, recommendedClasses, description, type, resetQuiz }: PlayerType & { resetQuiz: () => void }) => {
+	return (
+		<motion.div
+			initial={{ opacity: 0, scale: 0.9 }}
+			animate={{ opacity: 1, scale: 1 }}
+			transition={{ duration: 0.5 }}
+		>
+			<Card className={clsx(styles['dnd-quiz-result'])} variant={'outlined'}>
+				<Space orientation="vertical" size="large" style={{ width: '100%' }}>
+					<div className={styles["result-icon"]}>{icon}</div>
+					<Title level={2} style={{ textAlign: 'center', margin: 0 }}>
+						Ты — {name}!
+					</Title>
+					<Paragraph style={{ fontSize: '16px', textAlign: 'center' }}>
+						{description}
+					</Paragraph>
+					<Card className={styles["recommended-classes"]} title="Рекомендуемые классы">
+						<Space wrap>
+							{recommendedClasses.map((cls) => (
+								<span key={cls} className="class-tag">
+										{cls}
+									</span>
+							))}
+						</Space>
+					</Card>
+					<Space style={{ width: '100%', justifyContent: 'center' }} size="middle">
+						<Button
+							type="primary"
+							size="large"
+							icon={<RocketOutlined />}
+							href="./rules/character-creation"
+						>
+							Создать персонажа
+						</Button>
+						<Button size="large" onClick={resetQuiz}>
+							Пройти ещё раз
+						</Button>
+					</Space>
+				</Space>
+			</Card>
+		</motion.div>
+	)
+}
 
 export const DndQuiz: React.FC = () => {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -194,52 +242,12 @@ export const DndQuiz: React.FC = () => {
 
 	if (showResult) {
 		const result = calculateResult();
-		return (
-			<motion.div
-				initial={{ opacity: 0, scale: 0.9 }}
-				animate={{ opacity: 1, scale: 1 }}
-				transition={{ duration: 0.5 }}
-			>
-				<Card className="dnd-quiz-result" bordered={false}>
-					<Space direction="vertical" size="large" style={{ width: '100%' }}>
-						<div className="result-icon">{result.icon}</div>
-						<Title level={2} style={{ textAlign: 'center', margin: 0 }}>
-							Ты — {result.name}!
-						</Title>
-						<Paragraph style={{ fontSize: '16px', textAlign: 'center' }}>
-							{result.description}
-						</Paragraph>
-						<Card className="recommended-classes" title="Рекомендуемые классы">
-							<Space wrap>
-								{result.recommendedClasses.map((cls) => (
-									<span key={cls} className="class-tag">
-										{cls}
-									</span>
-								))}
-							</Space>
-						</Card>
-						<Space style={{ width: '100%', justifyContent: 'center' }} size="middle">
-							<Button
-								type="primary"
-								size="large"
-								icon={<RocketOutlined />}
-								href="/docs/rules/Создание персонажа"
-							>
-								Создать персонажа
-							</Button>
-							<Button size="large" onClick={resetQuiz}>
-								Пройти ещё раз
-							</Button>
-						</Space>
-					</Space>
-				</Card>
-			</motion.div>
-		);
+		return <DNDResult {...result} resetQuiz={resetQuiz} />
 	}
 
 	return (
-		<Card className="dnd-quiz" bordered={false}>
-			<Space direction="vertical" size="large" style={{ width: '100%' }}>
+		<Card className={styles["dnd-quiz"]} variant={'outlined'}>
+			<Space orientation="vertical" size="large" style={{ width: '100%' }}>
 				<div>
 					<Title level={4} style={{ marginBottom: '8px' }}>
 						Вопрос {currentQuestion + 1} из {questions.length}
@@ -263,12 +271,12 @@ export const DndQuiz: React.FC = () => {
 							value={selectedAnswer}
 							style={{ width: '100%' }}
 						>
-							<Space direction="vertical" style={{ width: '100%' }} size="middle">
+							<Space orientation="vertical" style={{ width: '100%' }} size="middle">
 								{questions[currentQuestion].options.map((option) => (
 									<Radio.Button
 										key={option.value}
 										value={option.value}
-										className="quiz-option"
+										className={styles["quiz-option"]}
 									>
 										{option.label}
 									</Radio.Button>

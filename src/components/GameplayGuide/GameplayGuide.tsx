@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+
 import { Steps, Card, Button, Space } from 'antd';
-import { motion, AnimatePresence } from 'framer-motion';
 import {
 	BookOutlined,
 	CommentOutlined,
@@ -10,7 +10,11 @@ import {
 	LeftOutlined,
 	RightOutlined,
 } from '@ant-design/icons';
-import './GameplayGuide.css';
+
+import { motion, AnimatePresence } from 'framer-motion';
+import clsx from "clsx";
+
+import styles from './GameplayGuide.module.css';
 
 const { Step } = Steps;
 
@@ -151,8 +155,8 @@ export const GameplayGuide: React.FC = () => {
 	const currentStep = gameSteps[current];
 
 	return (
-		<div className="gameplay-guide">
-			<Steps current={current} className="gameplay-steps">
+		<div className={styles["gameplay-guide"]}>
+			<Steps current={current} className={styles["gameplay-steps"]}>
 				{gameSteps.map((step, index) => (
 					<Step key={index} title={step.title} icon={step.icon} />
 				))}
@@ -165,31 +169,29 @@ export const GameplayGuide: React.FC = () => {
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: -20 }}
 					transition={{ duration: 0.4 }}
-					className="step-content"
+					className={styles["step-content"]}
 				>
-					<Card className="step-card" bordered={false}>
-						<div className="step-header">
-							<div className="step-icon-large">{currentStep.icon}</div>
+					<Card className={styles["step-card"]} variant={'outlined'}>
+						<div className={styles["step-header"]}>
+							<div className={styles["step-icon-large"]}>{currentStep.icon}</div>
 							<h2>{currentStep.title}</h2>
 						</div>
-						<p className="step-description">{currentStep.description}</p>
+						<p className={styles["step-description"]}>{currentStep.description}</p>
 
-						<div className="step-example">
+						<div className={styles["step-example"]}>
 							<h3>📖 Пример игры:</h3>
-							<div className="dialogue">
+							<div className={styles["dialogue"]}>
 								{currentStep.example.map((line, index) => (
 									<motion.div
 										key={index}
 										initial={{ opacity: 0, x: -10 }}
 										animate={{ opacity: 1, x: 0 }}
 										transition={{ delay: index * 0.1 }}
-										className={
-											line.dm
-												? 'dialogue-dm'
-												: line.player
-												? 'dialogue-player'
-												: 'dialogue-action'
-										}
+										className={clsx({
+											[styles['dialogue-dm']]: line.dm,
+											[styles['dialogue-player']]: !line.dm && line.player,
+											[styles['dialogue-action']]: !line.dm && !line.player,
+										})}
 									>
 										{line.dm && (
 											<>
@@ -210,7 +212,7 @@ export const GameplayGuide: React.FC = () => {
 						</div>
 					</Card>
 
-					<Space className="step-navigation" size="middle">
+					<Space className={styles["step-navigation"]} size="middle">
 						<Button
 							icon={<LeftOutlined />}
 							onClick={prev}
@@ -224,7 +226,7 @@ export const GameplayGuide: React.FC = () => {
 								Далее <RightOutlined />
 							</Button>
 						) : (
-							<Button type="primary" href="/docs/intro" size="large">
+							<Button type="primary" href="./rules" size="large">
 								К документации <RightOutlined />
 							</Button>
 						)}

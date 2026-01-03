@@ -51,19 +51,22 @@ function useDocTOC() {
 	};
 }
 
-export default function DocItemLayout({ children }: Props): ReactNode {
+export default function DocItemLayout({ children }: Readonly<Props>): ReactNode {
 	const docTOC = useDocTOC();
+
 	const { metadata } = useDoc();
+
 	return (
 		<div className='row'>
-			<div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
+			<div className={clsx('col', !docTOC.hidden && styles['doc-item-col'])}>
 				<ContentVisibility metadata={metadata} />
 				<DocVersionBanner />
-				<div className={styles.docItemContainer}>
+				<div className={styles['doc-item-container']}>
 					<motion.article
 						initial='hidden'
 						animate='visible'
 						variants={contentVariants}
+						className={styles['doc-item-content']}
 						transition={{
 							duration: 0.4,
 							ease: 'easeOut',
