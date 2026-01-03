@@ -405,7 +405,6 @@ pre code {
   padding: 0;
 }
 
-/* Таблицы */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -413,7 +412,8 @@ table {
   background: var(--dnd-bg-secondary);
   border: 2px solid var(--dnd-border);
   border-radius: var(--border-radius-md);
-  overflow: hidden;
+  overflow: scroll !important;
+  table-layout: fixed;
 }
 
 th {
@@ -485,14 +485,12 @@ tr:focus-visible {
   background: var(--color-danger);
 }
 
-/* Focus states для доступности */
 *:focus-visible {
   outline: 2px solid var(--color-primary-focus);
   outline-offset: 2px;
   border-radius: var(--border-radius-sm);
 }
 
-/* Улучшенные focus states для интерактивных элементов */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
@@ -504,7 +502,6 @@ textarea:focus-visible,
   box-shadow: 0 0 0 2px var(--dnd-bg-primary), 0 0 0 4px var(--color-primary-focus);
 }
 
-/* Hover states с улучшенной видимостью */
 a:hover,
 button:hover,
 .interactive:hover {
@@ -512,7 +509,6 @@ button:hover,
   opacity: 0.9;
 }
 
-/* Selected states */
 .selected,
 [aria-selected='true'] {
   background: var(--dnd-bg-tertiary);
@@ -520,14 +516,12 @@ button:hover,
   font-weight: 600;
 }
 
-/* Active states */
 button:active,
 a:active {
   transform: translateY(1px);
   transition: var(--transition-fast);
 }
 
-/* Disabled states для доступности */
 button:disabled,
 a[aria-disabled='true'],
 input:disabled {
@@ -536,7 +530,6 @@ input:disabled {
   pointer-events: none;
 }
 
-/* Screen reader only класс */
 .sr-only {
   position: absolute;
   width: 1px;

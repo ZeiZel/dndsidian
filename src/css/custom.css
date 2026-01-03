@@ -6,7 +6,7 @@
 @import './footer.css';
 @import './pdf-list.css';
 @import './pagination.css';
-
+@import './globals.css';
 /* Все цвета теперь используют CSS переменные из dnd-theme.css */
 
 /* Интеграция Ant Design компонентов */
