@@ -153,7 +153,7 @@ const DNDResult = ({ icon, name, recommendedClasses, description, type, resetQui
 				<Space orientation="vertical" size="large" style={{ width: '100%' }}>
 					<div className={styles["result-icon"]}>{icon}</div>
 					<Title level={2} style={{ textAlign: 'center', margin: 0 }}>
-						Ты — {name}!
+						Ты - {name}!
 					</Title>
 					<Paragraph style={{ fontSize: '16px', textAlign: 'center' }}>
 						{description}

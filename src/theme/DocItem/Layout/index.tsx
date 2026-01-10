@@ -27,7 +27,7 @@ const contentVariants = {
 	},
 };
 
-/**
+/
  * Decide if the toc should be rendered, on mobile or desktop viewports
  */
 function useDocTOC() {

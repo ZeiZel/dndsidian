@@ -1,8 +1,8 @@
-/**/.obsidian
+//.obsidian
 /node_modules
 .idea
 .vscode
-**/build
-**/out
+/build
+/out
 .DS_store
 .docusaurus
