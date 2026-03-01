@@ -1,0 +1,8 @@
+{
+  "label": "Бестиарий",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Монстры и существа D&D 5e по типам и уровню опасности"
+  }
+}

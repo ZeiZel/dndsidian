@@ -1,0 +1,190 @@
+.raceCard {
+	width: 100%;
+	height: 100%;
+}
+
+.cardLink {
+	text-decoration: none !important;
+	display: block;
+	height: 100%;
+}
+
+.cardLink:hover {
+	text-decoration: none !important;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: var(--spacing-lg);
+	border: 2px solid var(--dnd-border);
+	background: linear-gradient(135deg, rgba(253, 246, 227, 0.95), rgba(245, 232, 199, 0.95));
+	box-shadow: 0 8px 24px var(--dnd-shadow);
+	transition: var(--transition-base);
+}
+
+.card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 12px 32px var(--dnd-shadow-dark) !important;
+	border-color: var(--color-primary);
+}
+
+.header {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--spacing-md);
+	margin-bottom: var(--spacing-md);
+}
+
+.iconContainer {
+	font-size: 2.5rem;
+	color: var(--color-primary);
+	flex-shrink: 0;
+}
+
+.titleBlock {
+	flex: 1;
+	min-width: 0;
+}
+
+.title {
+	margin-bottom: var(--spacing-xs) !important;
+	border-bottom: none !important;
+	padding-bottom: 0 !important;
+}
+
+.nameEn {
+	font-size: var(--font-size-sm);
+	color: var(--dnd-text-muted);
+	font-style: italic;
+}
+
+.sourceTag {
+	font-size: var(--font-size-xs);
+	font-weight: 600;
+	border: none;
+	flex-shrink: 0;
+}
+
+.description {
+	flex: 1;
+	font-size: var(--font-size-sm);
+	line-height: var(--line-height-normal);
+	margin-bottom: var(--spacing-md) !important;
+}
+
+.stats {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-md) 0;
+	border-top: 1px solid var(--dnd-border-light);
+	border-bottom: 1px solid var(--dnd-border-light);
+}
+
+.statRow {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	flex-wrap: wrap;
+}
+
+.statLabel {
+	font-size: var(--font-size-xs);
+	color: var(--dnd-text-muted);
+	font-weight: 500;
+	min-width: 80px;
+}
+
+.statValue {
+	font-size: var(--font-size-xs);
+	background: var(--dnd-bg-tertiary);
+	color: var(--dnd-text);
+	border: 1px solid var(--dnd-border);
+}
+
+.statTags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-xs);
+}
+
+.bonusTag {
+	font-size: var(--font-size-xs);
+}
+
+.traits {
+	padding-top: var(--spacing-md);
+}
+
+.traitsLabel {
+	display: block;
+	font-size: var(--font-size-xs);
+	color: var(--dnd-text-muted);
+	font-weight: 500;
+	margin-bottom: var(--spacing-sm);
+}
+
+.traitsList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-xs);
+}
+
+.traitTag {
+	font-size: var(--font-size-xs);
+	background: var(--color-primary);
+	color: var(--dnd-text);
+	border: none;
+}
+
+/* Dark theme */
+[data-theme='dark'] .card {
+	background: var(--dnd-bg-secondary) !important;
+	border-color: var(--dnd-border) !important;
+}
+
+[data-theme='dark'] .card:hover {
+	border-color: var(--color-primary) !important;
+}
+
+[data-theme='dark'] .iconContainer {
+	color: var(--color-primary-light);
+}
+
+[data-theme='dark'] .statValue {
+	background: var(--dnd-bg-tertiary);
+	border-color: var(--dnd-border);
+}
+
+[data-theme='dark'] .traitTag {
+	background: var(--color-primary-dark);
+	color: var(--dnd-text-light);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+	.header {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.titleBlock {
+		text-align: center;
+	}
+
+	.sourceTag {
+		margin-top: var(--spacing-sm);
+	}
+
+	.statRow {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.statLabel {
+		min-width: auto;
+	}
+}

@@ -1,0 +1,197 @@
+---
+sidebar_position: 1
+title: Обзор классов
+description: Все игровые классы D&D 5e
+---
+
+import { ClassCard } from '@site/src/components';
+
+# Классы D&D 5e
+
+Класс определяет основные способности вашего персонажа, его стиль боя и роль в команде. В D&D 5e доступно 13 классов, каждый с уникальной механикой и множеством подклассов.
+
+## Выбор класса
+
+При выборе класса учитывайте:
+- **Роль в команде** — защитник, урон, поддержка или контроль
+- **Основные характеристики** — какие атрибуты будут главными
+- **Сложность освоения** — некоторые классы требуют больше опыта
+- **Стиль игры** — ближний/дальний бой, магия, хитрость
+
+## Все классы
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <ClassCard
+    name="Варвар"
+    nameEn="Barbarian"
+    description="Свирепый воин первобытных земель, черпающий силу из ярости."
+    hitDie="d12"
+    primaryStats={['Сила', 'Телосложение']}
+    role="tank"
+    difficulty={1}
+    icon="⚔️"
+    link="/docs/classes/barbarian"
+  />
+  <ClassCard
+    name="Бард"
+    nameEn="Bard"
+    description="Вдохновляющий маг, чья сила происходит из музыки и историй."
+    hitDie="d8"
+    primaryStats={['Харизма']}
+    role="support"
+    difficulty={3}
+    icon="🎵"
+    link="/docs/classes/bard"
+    delay={0.1}
+  />
+  <ClassCard
+    name="Жрец"
+    nameEn="Cleric"
+    description="Божественный заклинатель, избранный богами для служения."
+    hitDie="d8"
+    primaryStats={['Мудрость']}
+    role="support"
+    difficulty={2}
+    icon="✨"
+    link="/docs/classes/cleric"
+    delay={0.2}
+  />
+  <ClassCard
+    name="Друид"
+    nameEn="Druid"
+    description="Хранитель природы, способный принимать звериные формы."
+    hitDie="d8"
+    primaryStats={['Мудрость']}
+    role="control"
+    difficulty={3}
+    icon="🌿"
+    link="/docs/classes/druid"
+    delay={0.3}
+  />
+  <ClassCard
+    name="Воин"
+    nameEn="Fighter"
+    description="Мастер боевых искусств, владеющий любым оружием и доспехами."
+    hitDie="d10"
+    primaryStats={['Сила', 'Ловкость']}
+    role="dps"
+    difficulty={1}
+    icon="🛡️"
+    link="/docs/classes/fighter"
+    delay={0.4}
+  />
+  <ClassCard
+    name="Монах"
+    nameEn="Monk"
+    description="Мастер боевых искусств, использующий силу ки."
+    hitDie="d8"
+    primaryStats={['Ловкость', 'Мудрость']}
+    role="dps"
+    difficulty={2}
+    icon="👊"
+    link="/docs/classes/monk"
+    delay={0.5}
+  />
+  <ClassCard
+    name="Паладин"
+    nameEn="Paladin"
+    description="Святой воин, связанный священной клятвой."
+    hitDie="d10"
+    primaryStats={['Сила', 'Харизма']}
+    role="tank"
+    difficulty={2}
+    icon="⚜️"
+    link="/docs/classes/paladin"
+    delay={0.6}
+  />
+  <ClassCard
+    name="Следопыт"
+    nameEn="Ranger"
+    description="Воин дикой природы, охотник на монстров и защитник границ."
+    hitDie="d10"
+    primaryStats={['Ловкость', 'Мудрость']}
+    role="dps"
+    difficulty={2}
+    icon="🏹"
+    link="/docs/classes/ranger"
+    delay={0.7}
+  />
+  <ClassCard
+    name="Плут"
+    nameEn="Rogue"
+    description="Мастер скрытности, хитрости и точных ударов."
+    hitDie="d8"
+    primaryStats={['Ловкость']}
+    role="dps"
+    difficulty={2}
+    icon="🗡️"
+    link="/docs/classes/rogue"
+    delay={0.8}
+  />
+  <ClassCard
+    name="Чародей"
+    nameEn="Sorcerer"
+    description="Заклинатель с врождённой магической силой в крови."
+    hitDie="d6"
+    primaryStats={['Харизма']}
+    role="dps"
+    difficulty={3}
+    icon="🔮"
+    link="/docs/classes/sorcerer"
+    delay={0.9}
+  />
+  <ClassCard
+    name="Колдун"
+    nameEn="Warlock"
+    description="Заклинатель, черпающий силу из договора с могущественной сущностью."
+    hitDie="d8"
+    primaryStats={['Харизма']}
+    role="dps"
+    difficulty={3}
+    icon="👁️"
+    link="/docs/classes/warlock"
+    delay={1.0}
+  />
+  <ClassCard
+    name="Волшебник"
+    nameEn="Wizard"
+    description="Учёный-маг, постигающий тайны арканной магии."
+    hitDie="d6"
+    primaryStats={['Интеллект']}
+    role="control"
+    difficulty={4}
+    icon="📚"
+    link="/docs/classes/wizard"
+    delay={1.1}
+  />
+  <ClassCard
+    name="Изобретатель"
+    nameEn="Artificer"
+    description="Мастер магических изобретений и алхимических устройств."
+    hitDie="d8"
+    primaryStats={['Интеллект']}
+    role="support"
+    difficulty={4}
+    icon="⚙️"
+    link="/docs/classes/artificer"
+    delay={1.2}
+  />
+</div>
+
+## Сравнительная таблица
+
+| Класс | Кость хитов | Основные характеристики | Роль | Сложность |
+|-------|-------------|------------------------|------|-----------|
+| Варвар | d12 | Сила, Телосложение | Защитник | ★☆☆☆☆ |
+| Бард | d8 | Харизма | Поддержка | ★★★☆☆ |
+| Жрец | d8 | Мудрость | Поддержка | ★★☆☆☆ |
+| Друид | d8 | Мудрость | Контроль | ★★★☆☆ |
+| Воин | d10 | Сила/Ловкость | Урон | ★☆☆☆☆ |
+| Монах | d8 | Ловкость, Мудрость | Урон | ★★☆☆☆ |
+| Паладин | d10 | Сила, Харизма | Защитник | ★★☆☆☆ |
+| Следопыт | d10 | Ловкость, Мудрость | Урон | ★★☆☆☆ |
+| Плут | d8 | Ловкость | Урон | ★★☆☆☆ |
+| Чародей | d6 | Харизма | Урон | ★★★☆☆ |
+| Колдун | d8 | Харизма | Урон | ★★★☆☆ |
+| Волшебник | d6 | Интеллект | Контроль | ★★★★☆ |
+| Изобретатель | d8 | Интеллект | Поддержка | ★★★★☆ |

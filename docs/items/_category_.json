@@ -1,0 +1,8 @@
+{
+  "label": "Предметы",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Оружие, доспехи и магические предметы D&D 5e"
+  }
+}

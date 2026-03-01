@@ -1,0 +1,195 @@
+.creatureCard {
+	width: 100%;
+	height: 100%;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: var(--spacing-lg);
+	border: 2px solid var(--dnd-border);
+	background: linear-gradient(135deg, rgba(253, 246, 227, 0.95), rgba(245, 232, 199, 0.95));
+	box-shadow: 0 8px 24px var(--dnd-shadow);
+	transition: var(--transition-base);
+}
+
+.card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 32px var(--dnd-shadow-dark) !important;
+	border-color: var(--color-primary);
+}
+
+.header {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--spacing-md);
+	margin-bottom: var(--spacing-sm);
+}
+
+.iconContainer {
+	font-size: 2rem;
+	color: var(--color-primary);
+	flex-shrink: 0;
+}
+
+.titleBlock {
+	flex: 1;
+	min-width: 0;
+}
+
+.title {
+	margin-bottom: 0 !important;
+	border-bottom: none !important;
+	padding-bottom: 0 !important;
+	font-size: var(--font-size-lg) !important;
+}
+
+.nameEn {
+	font-size: var(--font-size-xs);
+	color: var(--dnd-text-muted);
+	font-style: italic;
+}
+
+.crTag {
+	font-weight: 700;
+	font-size: var(--font-size-sm);
+	border: none;
+	flex-shrink: 0;
+}
+
+.typeLine {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	margin-bottom: var(--spacing-md);
+}
+
+.sizeLine {
+	font-size: var(--font-size-sm);
+	color: var(--dnd-text-muted);
+}
+
+.description {
+	font-size: var(--font-size-sm);
+	line-height: var(--line-height-normal);
+	margin-bottom: var(--spacing-md) !important;
+	font-style: italic;
+	color: var(--dnd-text-muted);
+}
+
+.combatStats {
+	display: flex;
+	justify-content: space-around;
+	padding: var(--spacing-sm) 0;
+	border-top: 1px solid var(--dnd-border-light);
+	border-bottom: 1px solid var(--dnd-border-light);
+	margin-bottom: var(--spacing-md);
+}
+
+.statBlock {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2px;
+}
+
+.statLabel {
+	font-size: var(--font-size-xs);
+	color: var(--dnd-text-muted);
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.statValue {
+	font-size: var(--font-size-sm);
+	font-weight: 600;
+	color: var(--dnd-text);
+}
+
+.abilityScores {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: var(--spacing-xs);
+	margin-bottom: var(--spacing-md);
+}
+
+.abilityScore {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: var(--spacing-xs);
+	background: var(--dnd-bg-tertiary);
+	border-radius: var(--border-radius-sm);
+}
+
+.abilityLabel {
+	font-size: 10px;
+	color: var(--dnd-text-muted);
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.abilityValue {
+	font-size: var(--font-size-sm);
+	font-weight: 700;
+	color: var(--dnd-text);
+}
+
+.abilityMod {
+	font-size: var(--font-size-xs);
+	color: var(--color-primary);
+	font-weight: 500;
+}
+
+.collapse {
+	margin-top: auto;
+}
+
+.abilityList {
+	margin: 0;
+	padding-left: var(--spacing-md);
+	font-size: var(--font-size-sm);
+}
+
+.abilityList li {
+	margin-bottom: var(--spacing-xs);
+}
+
+/* Dark theme */
+[data-theme='dark'] .card {
+	background: var(--dnd-bg-secondary) !important;
+	border-color: var(--dnd-border) !important;
+}
+
+[data-theme='dark'] .card:hover {
+	border-color: var(--color-primary) !important;
+}
+
+[data-theme='dark'] .iconContainer {
+	color: var(--color-primary-light);
+}
+
+[data-theme='dark'] .abilityScore {
+	background: var(--dnd-bg-tertiary);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+	.header {
+		flex-wrap: wrap;
+	}
+
+	.abilityScores {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.combatStats {
+		flex-wrap: wrap;
+		gap: var(--spacing-sm);
+	}
+
+	.statBlock {
+		flex: 1 1 30%;
+	}
+}

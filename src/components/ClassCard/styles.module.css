@@ -1,0 +1,160 @@
+.classCard {
+	width: 100%;
+	height: 100%;
+}
+
+.cardLink {
+	text-decoration: none !important;
+	display: block;
+	height: 100%;
+}
+
+.cardLink:hover {
+	text-decoration: none !important;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: var(--spacing-lg);
+	border: 2px solid var(--dnd-border);
+	background: linear-gradient(135deg, rgba(253, 246, 227, 0.95), rgba(245, 232, 199, 0.95));
+	box-shadow: 0 8px 24px var(--dnd-shadow);
+	transition: var(--transition-base);
+}
+
+.card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 12px 32px var(--dnd-shadow-dark) !important;
+	border-color: var(--color-primary);
+}
+
+.header {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--spacing-md);
+	margin-bottom: var(--spacing-md);
+}
+
+.iconContainer {
+	font-size: 2.5rem;
+	color: var(--color-primary);
+	flex-shrink: 0;
+}
+
+.titleBlock {
+	flex: 1;
+	min-width: 0;
+}
+
+.title {
+	margin-bottom: var(--spacing-xs) !important;
+	border-bottom: none !important;
+	padding-bottom: 0 !important;
+}
+
+.nameEn {
+	font-size: var(--font-size-sm);
+	color: var(--dnd-text-muted);
+	font-style: italic;
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-sm);
+	margin-bottom: var(--spacing-md);
+}
+
+.tag {
+	font-weight: 600;
+	border: none;
+}
+
+.description {
+	flex: 1;
+	font-size: var(--font-size-sm);
+	line-height: var(--line-height-normal);
+	margin-bottom: var(--spacing-md) !important;
+}
+
+.stats {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	padding-top: var(--spacing-md);
+	border-top: 1px solid var(--dnd-border-light);
+}
+
+.statRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: var(--spacing-sm);
+}
+
+.statLabel {
+	font-size: var(--font-size-xs);
+	color: var(--dnd-text-muted);
+	font-weight: 500;
+}
+
+.statTags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-xs);
+}
+
+.statTag {
+	font-size: var(--font-size-xs);
+	background: var(--dnd-bg-tertiary);
+	color: var(--dnd-text);
+	border: 1px solid var(--dnd-border);
+}
+
+.difficultyBar {
+	flex-shrink: 0;
+}
+
+/* Dark theme */
+[data-theme='dark'] .card {
+	background: var(--dnd-bg-secondary) !important;
+	border-color: var(--dnd-border) !important;
+}
+
+[data-theme='dark'] .card:hover {
+	border-color: var(--color-primary) !important;
+}
+
+[data-theme='dark'] .iconContainer {
+	color: var(--color-primary-light);
+}
+
+[data-theme='dark'] .statTag {
+	background: var(--dnd-bg-tertiary);
+	border-color: var(--dnd-border);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+	.header {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.titleBlock {
+		text-align: center;
+	}
+
+	.tags {
+		justify-content: center;
+	}
+
+	.statRow {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
